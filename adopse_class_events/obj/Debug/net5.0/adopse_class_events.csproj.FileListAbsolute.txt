@@ -38,3 +38,14 @@ C:\Users\sbrm6\source\repos\adopse_class_events\adopse_class_events\obj\Debug\ne
 C:\Users\sbrm6\source\repos\adopse_class_events\adopse_class_events\obj\Debug\net5.0\adopse_class_events.pdb
 C:\Users\sbrm6\source\repos\adopse_class_events\adopse_class_events\obj\Debug\net5.0\adopse_class_events.genruntimeconfig.cache
 C:\Users\sbrm6\source\repos\adopse_class_events\adopse_class_events\obj\Debug\net5.0\adopse_class_events.csproj.CopyComplete
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.csproj.AssemblyReference.cache
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.AssemblyInfoInputs.cache
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.AssemblyInfo.cs
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.csproj.CoreCompileInputs.cache
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.RazorAssemblyInfo.cache
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.RazorAssemblyInfo.cs
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.dll
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\ref\adopse_class_events.dll
+C:\Users\sbrm6\Documents\GitHub\adopse-2023\adopse_class_events\obj\Debug\net5.0\adopse_class_events.pdb

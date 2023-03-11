@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events\\adopse_class_events.csproj": {}
+    "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events\\adopse_class_events.csproj": {
+    "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events\\adopse_class_events.csproj",
+        "projectUniqueName": "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events.csproj",
         "projectName": "adopse_class_events",
-        "projectPath": "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events\\adopse_class_events.csproj",
+        "projectPath": "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events.csproj",
         "packagesPath": "C:\\Users\\sbrm6\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\adopse_class_events\\obj\\",
+        "outputPath": "C:\\Users\\sbrm6\\Documents\\GitHub\\adopse-2023\\adopse_class_events\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sbrm6\\AppData\\Roaming\\NuGet\\NuGet.Config",
