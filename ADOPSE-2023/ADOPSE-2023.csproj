@@ -7,4 +7,8 @@
     <RootNamespace>ADOPSE_2023</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
