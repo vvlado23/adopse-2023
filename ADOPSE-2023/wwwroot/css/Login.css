@@ -1,0 +1,97 @@
+﻿body {
+    position: relative;
+    background: #F4FCFF;
+}
+
+.Title {
+    position: absolute;
+    width: 357px;
+    height: 69px;
+    left: 45%;
+    top: 64px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #6B4B8A;
+}
+
+.User {
+    position: absolute;
+    width: 216px;
+    height: 38px;
+    left: 30%;
+    top: 168px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.Pass {
+    position: absolute;
+    width: 216px;
+    height: 38px;
+    left: 30%;
+    top: 311px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.UT {
+    box-sizing: border-box;
+    position: absolute;
+    width: 735px;
+    height: 64px;
+    left: 30%;
+    top: 212px;
+    background: #FFF5F5;
+    border: 2px solid #000000;
+    border-radius: 14px;
+}
+
+.PT {
+    box-sizing: border-box;
+    position: absolute;
+    width: 735px;
+    height: 68px;
+    left: 30%;
+    top: 349px;
+    background: #FFF5F5;
+    border: 2px solid #000000;
+    border-radius: 14px;
+}
+
+.Log {
+    position: absolute;
+    width: 193px;
+    height: 48px;
+    left: 35%;
+    top: 472px;
+    background: #6B4B8A;
+    border-radius: 37px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.Reg {
+    position: absolute;
+    width: 196px;
+    height: 48px;
+    left: 55%;
+    top: 472px;
+    background: #6B4B8A;
+    border-radius: 56px;
+    font-size: large;
+    font-weight: bold;
+}

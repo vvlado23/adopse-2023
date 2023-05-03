@@ -1,0 +1,35 @@
+﻿@page "/RegisterPage"
+@model ADOPSE_2023.Models.UserController
+
+@{
+    Layout = "../Shared/_RegisterLayout.cshtml";
+}
+
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="Title">Register</div>
+        <div class="User">Username:</div>
+        <div class="Email">Email:</div>
+        <div class="Pass">Password:</div>
+        <div class="ConfPass">Confirm Password:</div>
+        <div>
+            <input type="text" class="UT" placeholder="Type your username" />
+            <input type="text" class="Mail" placeholder="Type your Email" />
+            <input type="text" class="PT" placeholder="Type your password" />
+            <input type="text" class="CP" placeholder="Confirm your password" />
+        </div>
+
+        <input type="button" class="Reg" value="Create Account" onclick="location.href=''" />
+
+        <div>
+            <p class="Relog">Already have an account? @Html.ActionLink("Sign In", "Login")</p>
+        </div>
+
+        <img src="\images\regimg.jpeg" class="Logo" />
+
+    </form>
+</body>

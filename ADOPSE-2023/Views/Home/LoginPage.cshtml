@@ -1,0 +1,26 @@
+﻿@page "/"
+@model ADOPSE_2023.Models.UserController
+
+@{
+    Layout = "../Shared/_LoginLayout.cshtml";
+}
+
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+
+    <div class="Title">Login</div>
+    <div class="User">Username:</div>
+    <div class="Pass">Password:</div>
+
+    <div>
+        <input type="text" class="UT" placeholder="Type your username" />
+        <input type="text" class="PT" placeholder="Type your password" />
+    </div>
+
+    <input type="button" value="Login" class="Log" />
+    <input type="button" value="Register" class="Reg" onclick="location.href='RegisterPage'" />
+
+
+</body>
