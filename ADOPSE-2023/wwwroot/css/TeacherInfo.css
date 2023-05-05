@@ -1,0 +1,316 @@
+﻿body {
+}
+.kathigName {
+    position: absolute;
+    width: 266px;
+    height: 77px;
+    left: 600px;
+    top: 21px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    /* or 67% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.classNumber {
+    position: absolute;
+    width: 145px;
+    height: 91px;
+    left: 900px;
+    top: 14px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    /* or 67% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.sendmail {
+    position: absolute;
+    width: 100px;
+    height: 12px;
+    left: 2000px;
+    top: 53px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    /* or 200% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.006em;
+    color: #625FF5;
+}
+.userPic {
+
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 1800px;
+    top: 53px;
+}
+#tmimaTag {
+    position: absolute;
+    width: 77px;
+    height: 26px;
+    left: 600px;
+    top: 98px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.actualTmima {
+    position: absolute;
+    width: 353px;
+    height: 36px;
+    left: 600px;
+    top: 110px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+#perifragiTag {
+    position: absolute;
+    width: 118px;
+    height: 29px;
+    left: 600px;
+    top: 164px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.006em;
+}
+
+.actualPerigrafi {
+    position: absolute;
+    width: 899px;
+    height: 69px;
+    left: 600px;
+    top: 180px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.emailtag {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 320px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.actualemail {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+    left: 800px;
+    top: 325px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #687EF4;
+}
+
+.line1 {
+    position: absolute;
+    width: 1258px;
+    left: 590px;
+    top: 335px;
+    border-bottom: 1px solid;
+}
+
+.urltag {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 350px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.actualURLtag {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+    left: 800px;
+    top: 350px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #687EF4;
+}
+
+.line2 {
+    position: absolute;
+    width: 1258px;
+    left: 590px;
+    top: 365px;
+    border-bottom: 1px solid;
+}
+
+.rolosatg {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 380px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.actualrolostag {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+    left: 800px;
+    top: 380px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+}
+
+.line3 {
+    position: absolute;
+    width: 1258px;
+    left: 590px;
+    top: 395px;
+    border-bottom: 1px solid;
+}
+
+.mathimatag {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 407px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.actualmathima {
+    position: absolute;
+    width: 405px;
+    height: 31px;
+    left: 800px;
+    top: 407px;
+}
+
+.line4 {
+    position: absolute;
+    width: 1258px;
+    left: 590px;
+    top: 420px;
+    border-bottom: 1px solid;
+}
+
+.dyskolia {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 430px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.actualDyskolia {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+    left: 800px;
+    top: 430px;
+}

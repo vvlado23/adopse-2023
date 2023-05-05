@@ -1,0 +1,523 @@
+﻿body {
+
+}
+.className {
+    position: absolute;
+    width: 266px;
+    height: 77px;
+    left: 600px;
+    top: 21px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    /* or 67% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.classNumber {
+    position: absolute;
+    width: 145px;
+    height: 91px;
+    left: 900px;
+    top: 14px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    /* or 67% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.sendmail {
+    position: absolute;
+    width: 100px;
+    height: 12px;
+    left: 2000px;
+    top: 53px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    /* or 200% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.006em;
+    color: #625FF5;
+}
+#tmimaTag {
+    position: absolute;
+    width: 77px;
+    height: 26px;
+    left: 600px;
+    top: 98px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualTmima {
+    position: absolute;
+    width: 353px;
+    height: 36px;
+    left: 600px;
+    top: 110px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+#perifragiTag {
+    position: absolute;
+    width: 118px;
+    height: 29px;
+    left: 600px;
+    top: 164px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    /* or 120% */
+
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.006em;
+}
+.actualPerigrafi {
+    position: absolute;
+    width: 899px;
+    height: 69px;
+    left: 600px;
+    top: 180px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.kathigitesTag {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 320px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualKathigites {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+     left: 800px;
+    top: 325px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #687EF4;
+}
+.line1 {
+    position: absolute;
+    width: 1258px;
+    left: 590px;
+    top: 335px;
+    border-bottom: 1px solid;
+}
+.paleoteraEvents {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 350px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualpaleoteraEvents {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+     left: 800px;
+    top: 350px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #687EF4;
+}
+.line2 {
+    position: absolute;
+    width: 1258px;
+     left: 590px;
+    top: 365px;
+    border-bottom: 1px solid;
+}
+.neoteraEvents {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 380px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualneoteraEvents {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+     left: 800px;
+    top: 380px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #687EF4;
+}
+.line3 {
+    position: absolute;
+    width: 1258px;
+     left: 590px;
+    top: 395px;
+    border-bottom: 1px solid;
+}
+.titlosEng {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 407px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualEngTitlos {
+    position: absolute;
+    width: 405px;
+    height: 31px;
+     left: 800px;
+    top: 407px;
+}
+
+.line4 {
+    position: absolute;
+    width: 1258px;
+     left: 590px;
+    top: 420px;
+    border-bottom: 1px solid;
+}
+.dyskolia {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 430px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualDyskolia {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+     left: 800px;
+    top: 430px;
+}
+.line5 {
+    position: absolute;
+    width: 1258px;
+     left: 590px;
+    top: 445px;
+    border-bottom: 1px solid;
+}
+.vathmologia {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 455px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.actualVathmologia {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+     left: 800px;
+    top: 455px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.line6 {
+    position: absolute;
+    width: 1258px;
+     left: 590px;
+    top: 470px;
+    border-bottom: 1px solid;
+}
+.xaraktrismos {
+    position: absolute;
+    width: 155px;
+    height: 31px;
+    left: 600px;
+    top: 478px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.Actualxaraktrismos {
+    position: absolute;
+    width: 401px;
+    height: 31px;
+     left: 800px;
+    top: 478px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.line7 {
+    border-bottom: 1px solid;
+    position: absolute;
+    width: 1258px;
+     left: 590px;
+    top: 493px;
+    border-bottom: 1px solid;
+}
+
+.GkriKouti {
+    position: absolute;
+    border-radius: 10px;
+    width: 400px;
+    height: 180px;
+    left: 600px;
+    top: 615px;
+    background: #F3F2F2;
+}
+.GkriKouti:hover {
+    position: absolute;
+    border-radius: 10px;
+    width: 400px;
+    height: 180px;
+    left: 600px;
+    top: 615px;
+    background: #F3F2F2;
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+
+.titlosStoKouti {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 125px;
+    top: 0px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+    /* identical to box height, or 200% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+.numberRat {
+    position: absolute;
+    width: 13px;
+    height: 15px;
+    left: 50px;
+    top: 78px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 20px;
+   
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.006em;
+    color: #ED4915;
+}
+
+.starRat {
+    background-image: url('../images/asteri5.png');
+    position: absolute;
+    width: 250px;
+    height: 42px;
+    left: 90px;
+    top: 60px;
+}
+.kitrinoKouti {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    left: 0px;
+    top: 130px;
+    background: #F4A915;
+    border-radius: 10px;
+}
+.timi {
+    position: absolute;
+    width: 60px;
+    height: 24px;
+    left: 8px;
+    top: 142px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: px;   /* identical to box height, or 240% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+
+.anaskopisi {
+    position: absolute;
+    width: 130.77px;
+    height: 40px;
+    left: 1000px;
+    top: 850px;
+    background-color: black;
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: none;
+}
+/*.anaskopisi:hover {
+        position: absolute;
+        width: 130.77px;
+        height: 40px;
+        left: 1000px;
+        top: 850px;
+        background-color: black;
+        color: white;
+        font-family: "Arial", sans-serif;
+        font-size: 16px;
+        border-radius: 100px;
+        padding: 10px 20px;
+        box-shadow: none;
+        border-color: white;
+        transition: border-color 0.3s ease-in-out;
+} */
+
+.simmetoxi {
+    position: absolute;
+    width: 130.77px;
+    height: 40px;
+    left: 1300px;
+    top: 850px;
+    background-color: black;
+    color: white;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    box-shadow: none;
+}
