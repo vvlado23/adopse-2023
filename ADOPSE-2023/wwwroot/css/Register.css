@@ -1,0 +1,163 @@
+﻿body {
+    position: relative;
+    background: #F4FCFF;
+}
+
+.Title {
+    position: absolute;
+    width: 357px;
+    height: 69px;
+    left: 22%;
+    top: 150%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #6B4B8A;
+}
+
+.Logo {
+    position: absolute;
+    width: 323px;
+    height: 628px;
+    left: 65%;
+    top: 225%;
+    border: 2px solid #000000;
+    backdrop-filter: blur(2px);
+    border-radius: 155.5px;
+}
+
+.User {
+    position: absolute;
+    width: 216px;
+    height: 38px;
+    left: 10%;
+    top: 310%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.UT {
+    box-sizing: border-box;
+    position: absolute;
+    width: 735px;
+    height: 64px;
+    left: 10%;
+    top: 360%;
+    background: #FFF5F5;
+    border: 2px solid #000000;
+    border-radius: 14px;
+}
+
+
+.Email {
+    position: absolute;
+    width: 216px;
+    height: 38px;
+    left: 10%;
+    top: 510%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.Mail {
+    box-sizing: border-box;
+    position: absolute;
+    width: 735px;
+    height: 68px;
+    left: 10%;
+    top: 560%;
+    background: #FFF5F5;
+    border: 2px solid #000000;
+    border-radius: 14px;
+}
+
+.Pass {
+    position: absolute;
+    width: 216px;
+    height: 38px;
+    left: 10%;
+    top: 710%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.PT {
+    box-sizing: border-box;
+    position: absolute;
+    width: 735px;
+    height: 68px;
+    left: 10%;
+    top: 760%;
+    background: #FFF5F5;
+    border: 2px solid #000000;
+    border-radius: 14px;
+}
+
+.ConfPass {
+    position: absolute;
+    width: 216px;
+    height: 38px;
+    left: 10%;
+    top: 910%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.CP {
+    box-sizing: border-box;
+    position: absolute;
+    width: 735px;
+    height: 68px;
+    left: 10%;
+    top: 960%;
+    background: #FFF5F5;
+    border: 2px solid #000000;
+    border-radius: 14px;
+}
+
+.Reg {
+    position: absolute;
+    width: 196px;
+    height: 48px;
+    left: 22%;
+    top: 1130%;
+    background: #6B4B8A;
+    border-radius: 56px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.Relog {
+    position: absolute;
+    width: 20%;
+    height: 38px;
+    left: 20%;
+    top: 1300%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
