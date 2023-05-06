@@ -1,0 +1,40 @@
+﻿@page "/HomePage"
+@model ADOPSE_2023.Models.UserController
+
+@{
+    Layout = "../Shared/_HomeLayout.cshtml";
+}
+
+<body>
+	<div id="mySidebar" class="sidebar">
+		<header>Name</header>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
+		</br>
+		</br>
+		</br>
+		<a href="#"><i class="fa fa-home"></i>Home</a>
+		<a href="#"><i class="fa fa-book"></i>Courses</a>
+		<a href="#"><i class="fa fa-calendar"></i>Calendar</a>
+		<div>
+			<a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+		</div>
+		
+	</div>
+
+	<div class="main">
+		<button class="openbtn" onclick="openNav()" style="background:#6B4B8A; top:0%; left:0px"><i class="fa fa-bars fa-solid"></i></button>
+	</div>
+
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidebar").style.width = "200px";
+			document.getElementById("main").style.marginLeft = "200px";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidebar").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+		}
+	</script>
+</body>

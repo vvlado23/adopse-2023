@@ -20,5 +20,10 @@ namespace ADOPSE_2023.Controllers
         {
             return View();
         }
+
+        public IActionResult HomePage()
+        {
+            return View();
+        }
     }
 }
