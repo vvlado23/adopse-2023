@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Views\TeacherInfoF\" />
     <Folder Include="wwwroot\html\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\lib\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>
