@@ -138,21 +138,31 @@
     color: #000000;
 }
 .actualKathigites {
-    position: absolute;
-    width: 401px;
-    height: 31px;
-     left: 800px;
-    top: 325px;
+    position: relative;
+    width: 10%;
+    height: 50%;
+    left: 31%;
+    top: 314px;
     font-family: sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     font-size: 16px;
     line-height: 100%;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
-    color: #687EF4;
+    color: #687EF4; 
+    text-align: left;
 }
+
+
+
+.lista {
+    display: inline;
+    flex: 1;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+
+
 .line1 {
     position: absolute;
     width: 1258px;
@@ -521,3 +531,5 @@
     padding: 10px 20px;
     box-shadow: none;
 }
+
+
