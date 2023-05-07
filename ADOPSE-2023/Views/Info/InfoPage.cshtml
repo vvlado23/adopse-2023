@@ -7,8 +7,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/Info.css" asp-append-version="true" />
+    
 </head>
 <body>
+    
     <div class="className">ΜΑΘΗΜΑΤΙΚΑ </div>
     <div class="classNumber">541</div>
     <span id="tmimaTag">Τμήμα:</span>
@@ -20,7 +22,21 @@
         μια σειρά από προβλήματα τα οποία εμφανίζονται σε εφαρμογές της επιστήμης των υπολογιστών και των ηλεκτρονικών συστημάτων.
     </p>
     <div class="kathigitesTag">Καθηγητές:</div>
-    <div class="actualKathigites" onclick="location.href='/Info/TeacherInfo'">Σαλαμπάσης, Γουλίανας</div>
+    <!--<div class="ee" onclick="readTeacher()">Γουλίανας</div> -->
+    <!-- <a href="/Info/TeacherInfo" class="actualKathigites" onclick="readTeacher(this)">Σαλαμπάσης</a> -->
+    <div  onclick="readTeacher(this)">
+        <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher(this)">Σαλαμπάσης</a>
+        <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher(this)">Γουλίανας</a>
+        <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher(this)">Κώστογλου</a>
+    </div>
+
+    <!--     <div class="kathiLista">
+            <div class="lista">Σαλαμπάσης</div>
+              <div class="lista">Γουλίανας</div> 
+            <div class="lista">Κώστογλου</div> 
+        </div> -->
+        
+    </a>
     <hr class="line1"/>
     <div class="paleoteraEvents" onclick="location.href='/Info/TeacherInfo'">Παλεότερα Events:</div>
     <div class="actualpaleoteraEvents">Event1,Event2,Event3</div>
@@ -49,9 +65,10 @@
         <div class="timi">20-25€</div>
     </div>
 
-    <input type="button" value="Ανασκόπηση" class="anaskopisi" />
+    <button class="anaskopisi" onclick="sayHello()">Ανασκόπηση</button>
     <input type="button" value="Συμμετοχή" class="simmetoxi" />
 
+    <script src="~/js/Tscript.js"></script>
 </body>
 </html>
 
