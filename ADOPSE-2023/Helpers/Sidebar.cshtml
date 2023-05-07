@@ -1,0 +1,126 @@
+﻿@model string
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div id="mySidebar" class="sidebar">
+        <header>Name</header>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
+        </br>
+        </br>
+        </br>
+        <a href="#"><i class="fa fa-home"></i>Home</a>
+        <a href="#"><i class="fa fa-book"></i>Courses</a>
+        <a href="#"><i class="fa fa-calendar"></i>Calendar</a>
+        <div>
+            <a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <button class="openbtn" onclick="openNav()" style="background:#6B4B8A; top:0%; left:0px"><i class="fa fa-bars fa-solid"></i></button>
+    </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "200px";
+            document.getElementById("main").style.marginLeft = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+</body>
+
+@section scripts {
+    <script>
+        // Toggle the "show" class on the sidebar when the hamburger button is clicked
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            document.querySelector('.sidebar').classList.toggle('show');
+        });
+    </script>
+}
+
+<style>
+    body {
+        position: relative;
+        background: #F4FCFF;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #6B4B8A;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        border: 2px solid #000000;
+        border-radius: 0px 20px 20px 0px;
+    }
+
+        .sidebar a {
+            padding: 18px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: aliceblue;
+            display: block;
+            transition: 0.3s;
+            top: 10px;
+            text-align: left;
+        }
+
+            .sidebar a:hover {
+                padding-right: 40px;
+            }
+
+        .sidebar div {
+            padding-top: 290%;
+        }
+
+        .sidebar header {
+            position: absolute;
+            top: 5px;
+            left: 30px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: aliceblue;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: -15px;
+            left: -40px;
+            font-size: 36px;
+            margin-left: 20px;
+            text-align: center;
+        }
+
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #111;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+    .main {
+        transition: margin-left .5s;
+        padding: 20px;
+    }
+
+        .main .openbtn {
+        }
+</style>
