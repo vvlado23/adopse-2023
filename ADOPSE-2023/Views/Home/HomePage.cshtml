@@ -1,42 +1,111 @@
-﻿@page "/HomePage"
-@model string
-
-@{
-    Layout = "../Shared/_HomeLayout.cshtml";
-}
-
-@*TODO tha allaksei sto kanoniko home page*@
-
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Info.css" asp-append-version="true" />
+</head>
 <body>
-	<div id="mySidebar" class="sidebar">
-		<header>Name</header>
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars"></i></a>
-		</br>
-		</br>
-		</br>
-		<a href="#"><i class="fa fa-home"></i>Home</a>
-		<a href="#"><i class="fa fa-book"></i>Courses</a>
-		<a href="#"><i class="fa fa-calendar"></i>Calendar</a>
-		<div>
-			<a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-		</div>
-		
-	</div>
-
-	<div class="main">
-		<button class="openbtn" onclick="openNav()" style="background:#6B4B8A; top:0%; left:0px"><i class="fa fa-bars fa-solid"></i></button>
-	</div>
-
-
-	<script>
-		function openNav() {
-			document.getElementById("mySidebar").style.width = "200px";
-			document.getElementById("main").style.marginLeft = "200px";
-		}
-
-		function closeNav() {
-			document.getElementById("mySidebar").style.width = "0";
-			document.getElementById("main").style.marginLeft = "0";
-		}
-	</script>
+    @Html.Partial("../../Helpers/Sidebar", "my-custom-class")
+    <div class="homePageText">HOME PAGE </div>
+      <div class="calendar">
+    <div class="calendar-day">
+      Mon
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+      <div class="event">Event 2</div>
+    </div>
+    <div class="calendar-day">
+      Tue
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+    </div>
+    <div class="calendar-day">
+      Wed
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+    </div>
+    <div class="calendar-day">
+      Thu
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+      <div class="event">Event 2</div>
+      <div class="event">Event 3</div>
+    </div>
+    <div class="calendar-day">
+      Fri
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+    </div>
+    <div class="calendar-day">
+      Sat
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+    </div>
+    <div class="calendar-day current-day">
+      Sun
+      <div class="divider"></div>
+      <div class="event">Event 1</div>
+      <div class="event">Event 2</div>
+    </div>
+  </div>
 </body>
+</html>
+
+<style>
+     /* Calendar styles */
+     .calendar {
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      width:80%;
+      left: 300px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .calendar-day {
+      width: 12%;
+      height: 500px;
+      text-align: center;
+      font-weight: bold;
+      padding: 5px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+    .calendar-day.current-day {
+      color: #6B4B8A;
+    }
+    .divider{
+        height:2;
+        border-top: 2px solid #000;
+    }
+    .event {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 25px;
+      padding-top:10px;
+      
+      text-align: center;
+      color: #6B4B8A;
+      font-size: 12px;
+    }
+    .homePageText {
+    position: absolute;
+    width: 266px;
+    height: 77px;
+    left: 300px;
+    top: 21px;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 24px;
+    /* or 67% */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.006em;
+    color: #000000;
+}
+</style>
