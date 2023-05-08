@@ -6,8 +6,12 @@
 </head>
 <body>
     @Html.Partial("../../Helpers/Sidebar", "my-custom-class")
+
     <div class="homePageText">HOME PAGE </div>
-      <div class="calendar">
+    <div>
+        <iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=598&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FAthens&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&mode=WEEK&src=NDk3NjU2ZmYyODk4MGY4MjA4MDdiM2ZmZGM3YzdjNWZiNDQzNDczNTk0MTZlMDExY2UxMDljN2ExZjA4ZmQyMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4tZ2IuZ3JlZWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZWwuZ3JlZWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23E67C73&color=%2333B679&color=%230B8043&color=%230B8043" style="border-width:0" width="800" height="598" frameborder="0" scrolling="no"></iframe>
+    </div>
+    @* <div class="calendar">
     <div class="calendar-day">
       Mon
       <div class="divider"></div>
@@ -47,7 +51,7 @@
       <div class="event">Event 1</div>
       <div class="event">Event 2</div>
     </div>
-  </div>
+  </div>*@
 </body>
 </html>
 
@@ -63,7 +67,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-    .calendar-day {
+/*    .calendar-day {
       width: 12%;
       height: 500px;
       text-align: center;
@@ -89,7 +93,7 @@
       text-align: center;
       color: #6B4B8A;
       font-size: 12px;
-    }
+    }*/
     .homePageText {
     position: absolute;
     width: 266px;

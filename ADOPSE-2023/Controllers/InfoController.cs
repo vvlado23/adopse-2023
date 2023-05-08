@@ -13,7 +13,7 @@ namespace ADOPSE_2023.Controllers
         public IActionResult TeacherInfo()
         {
             return View();
-        }
+        }  
 
     }
 }
