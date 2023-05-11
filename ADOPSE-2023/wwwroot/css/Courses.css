@@ -1,0 +1,32 @@
+﻿.container {
+    position: absolute;
+    width: 17%;
+    height: 700px;
+    left: 10px;
+    top: 9%;
+    background-color: aliceblue;
+    border: solid;
+    border-radius: 11px;
+    text-align:left;
+}
+
+.filters {
+    width: 40%;
+    align-items:center;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.results {
+    width: 70%;
+}
+
+.item {
+    margin-bottom: 10px;
+}
+
+input[type=checkbox] {
+    margin-right: 5px;
+}

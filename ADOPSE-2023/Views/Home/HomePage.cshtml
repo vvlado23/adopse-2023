@@ -1,111 +1,24 @@
-﻿<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/css/Info.css" asp-append-version="true" />
-</head>
-<body>
-    @Html.Partial("../../Helpers/Sidebar", "my-custom-class")
-    <div class="homePageText">HOME PAGE </div>
-      <div class="calendar">
-    <div class="calendar-day">
-      Mon
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-      <div class="event">Event 2</div>
-    </div>
-    <div class="calendar-day">
-      Tue
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-    </div>
-    <div class="calendar-day">
-      Wed
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-    </div>
-    <div class="calendar-day">
-      Thu
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-      <div class="event">Event 2</div>
-      <div class="event">Event 3</div>
-    </div>
-    <div class="calendar-day">
-      Fri
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-    </div>
-    <div class="calendar-day">
-      Sat
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-    </div>
-    <div class="calendar-day current-day">
-      Sun
-      <div class="divider"></div>
-      <div class="event">Event 1</div>
-      <div class="event">Event 2</div>
-    </div>
-  </div>
-</body>
-</html>
+@model ADOPSE_2023.Models.UserController;
 
-<style>
-     /* Calendar styles */
-     .calendar {
-      position: absolute;
-      display: flex;
-      justify-content: space-around;
-      width:80%;
-      left: 300px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .calendar-day {
-      width: 12%;
-      height: 500px;
-      text-align: center;
-      font-weight: bold;
-      padding: 5px;
-      border: 1px solid #ccc;
-      position: relative;
-    }
-    .calendar-day.current-day {
-      color: #6B4B8A;
-    }
-    .divider{
-        height:2;
-        border-top: 2px solid #000;
-    }
-    .event {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 25px;
-      padding-top:10px;
-      
-      text-align: center;
-      color: #6B4B8A;
-      font-size: 12px;
-    }
-    .homePageText {
-    position: absolute;
-    width: 266px;
-    height: 77px;
-    left: 300px;
-    top: 21px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 24px;
-    /* or 67% */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.006em;
-    color: #000000;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-</style>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+    <iframe class="my_calendar" src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%239E69AF&ctz=Europe%2FAthens&showPrint=0&showTitle=0&mode=WEEK&src=bWFya2xlb2xlb0BnbWFpbC5jb20&src=NDk3NjU2ZmYyODk4MGY4MjA4MDdiM2ZmZGM3YzdjNWZiNDQzNDczNTk0MTZlMDExY2UxMDljN2ExZjA4ZmQyMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4tZ2IuZ3JlZWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZWwuZ3JlZWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23E67C73&color=%2333B679&color=%230B8043&color=%230B8043" style="border-width:0" width="100%" height="75%" frameborder="0" scrolling="no"></iframe>
+    </body>
+
+    <style>
+        .my_calendar{
+            position:absolute;
+            top:9%;
+            left:0%;
+
+        }
+    </style>
+</html>

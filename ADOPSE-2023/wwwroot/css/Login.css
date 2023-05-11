@@ -5,18 +5,13 @@
 
 .Title {
     position: absolute;
-    width: 357px;
-    height: 69px;
+    width: 50%;
     left: 45%;
-    top: 64px;
+    top: 20%;
     font-family: sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 48px;
     line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
     color: #6B4B8A;
 }
 
@@ -24,8 +19,8 @@
     position: absolute;
     width: 216px;
     height: 38px;
-    left: 30%;
-    top: 168px;
+    left: 35%;
+    top: 350px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -33,13 +28,37 @@
     line-height: 18px;
     color: #000000;
 }
+input::placeholder {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    opacity: 0.5;
+    line-height: 18px;
+    color: #000000;
+}
+input[type='password'] {
 
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
+input[type='text'] {
+
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000000;
+}
 .Pass {
+
     position: absolute;
     width: 216px;
     height: 38px;
-    left: 30%;
-    top: 311px;
+    left: 35%;
+    top: 550px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -49,49 +68,74 @@
 }
 
 .UT {
+
     box-sizing: border-box;
     position: absolute;
     width: 735px;
     height: 64px;
-    left: 30%;
-    top: 212px;
+    left: 35%;
+    top: 400px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
 }
-
 .PT {
     box-sizing: border-box;
     position: absolute;
     width: 735px;
     height: 68px;
-    left: 30%;
-    top: 349px;
+    left: 35%;
+    top: 600px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
+    
 }
 
 .Log {
     position: absolute;
     width: 193px;
     height: 48px;
-    left: 35%;
-    top: 472px;
-    background: #6B4B8A;
-    border-radius: 37px;
+    left: 36%;
+    top: 700px;
+    background: #815ba5;
+    border-radius: 56px;
     font-weight: bold;
     font-size: large;
 }
+    .Log:hover {
+        position: absolute;
+        width: 193px;
+        height: 48px;
+        left: 36%;
+        top: 700px;
+        background: #986ebf;
+        border-radius: 56px;
+        font-weight: bold;
+        font-size: large;
+    }
 
 .Reg {
     position: absolute;
     width: 196px;
     height: 48px;
-    left: 55%;
-    top: 472px;
-    background: #6B4B8A;
+    right: 30%;
+
+    top: 700px;
+    background: #815ba5;
     border-radius: 56px;
     font-size: large;
     font-weight: bold;
 }
+
+    .Reg:hover {
+        position: absolute;
+        width: 196px;
+        height: 48px;
+        right: 30%;
+        top: 700px;
+        background: #986ebf;
+        border-radius: 56px;
+        font-size: large;
+        font-weight: bold;
+    }
