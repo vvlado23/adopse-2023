@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/footer.css" />
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="~/css/sidebar.css">
+
+
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Ogma</span>
+            <img class="logo-image"src="~/images/ecne.png"/>            
+        </div>
+        <div class="login">
+            <a style="color:black" onclick="location.href='/Home/LoginPage'"><i class="bx bx-log-in bx-md"></i></a>
+        </div>
+        <div class="sidebar">
+            <div class="logo" style="border:2px solid black; width:89%; border-radius:0; background-color:aliceblue">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Ogma</span>
+                <img class="logo-image" src="~/images/ecne.png" />
+            </div>
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a onclick="location.href='/Home/HomePage'" class="nav-link">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="link">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a onclick="location.href='/Info/CoursesPage'" class="nav-link">
+                            <i class='bx bx-book icon'></i>
+                            <span class="link">Courses</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a onclick="location.href='/Info/CalendarPage'" class="nav-link">
+                            <i class='bx bx-calendar icon'></i>
+                            <span class="link">Calendar</span>
+                        </a>
+                    </li>
+                    
+                    
+
+            </div>
+        </div>
+        
+    </nav>
+    <section class="overlay"></section>
+    <div>
+        <main>
+            @RenderBody()
+        </main>       
+    </div>
+
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <!-- <i class="fab fa-slack"></i>-->
+                    <img class="logo-image" src="~/images/ecne.png" />
+                    <span class="logo_name">Ogma</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+            </footer>
+    <script src="~/js/sidebarScript.js"></script>
+</body>
+</html>
+
+
