@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="~/css/TeacherInfo.css" asp-append-version="true" />
 </head>
 <body>
-    <div class="kathigName">Σαλαμπάσης </div>
+    <div class="kathigName" id="PlaceholderKathig"></div>
    
     <span id="tmimaTag">Τμήμα:</span> 
     <p class="actualTmima">Τμήμα Πληροφορικής</p>
@@ -34,7 +34,12 @@
     <div class="mathimatag">Μαθήματα:</div>
     <div class="actualmathima">Mathematics</div>
     <hr class="line4" />
-
+    <script>
+        //fernei tin metavliti apo ton xoro localstorage kai tin bazei sto div me id PlaceholderKathig
+        var teacherName = localStorage.getItem('teacher-name')
+        document.getElementById("PlaceholderKathig").innerHTML = teacherName;
+    </script>
+    <script src="~/js/JoinScript.js"></script>
 </body>
 </html>
 

@@ -24,7 +24,18 @@
         μια σειρά από προβλήματα τα οποία εμφανίζονται σε εφαρμογές της επιστήμης των υπολογιστών και των ηλεκτρονικών συστημάτων.
     </p>
     <div class="kathigitesTag">Καθηγητές:</div>
-    <div class="actualKathigites" onclick="location.href='/Info/TeacherInfo'">Σαλαμπάσης, Γουλίανας</div>
+
+
+    <div class="actualKathigites" onclick="location.href='/Info/TeacherInfo'">
+
+       <div onclick="readTeacher(this)">
+          <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher(this)" style="margin:5px;">Σαλαμπάσης</a>
+          <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher(this)">Γουλίανας</a>
+          <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher(this)">Κώστογλου</a>
+       </div>
+        
+    
+    </div>
     <hr class="line1" />
     <div class="paleoteraEvents">Παλεότερα Events:</div>
     <div class="actualpaleoteraEvents">Event1,Event2,Event3</div>
@@ -55,6 +66,7 @@
 
     <input type="button" value="Ανασκόπηση" class="anaskopisi" />
     <input type="button" value="Συμμετοχή" class="simmetoxi" />
+    <script src="~/js/JoinScript.js"></script>
 </body>
 
 

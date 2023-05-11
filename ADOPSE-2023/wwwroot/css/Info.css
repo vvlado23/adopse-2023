@@ -88,12 +88,15 @@
     font-weight: 600;
 }
 .actualKathigites {
-    position: absolute;
-    cursor: pointer;
-    left: 25%;
-    top: 27%;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    left: 19%;
+    top: 195px;
     font-family: sans-serif;
     color: #687EF4;
+    color: #687EF4;
+    text-align: left;
 }
 .line1 {
     position: absolute;
