@@ -7,6 +7,8 @@
 
 <html>
 <head>
+
+    <title>Register Page</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/Register.css"/>
@@ -22,8 +24,8 @@
         <div>
             <input type="text" class="UT" placeholder="Type your username" />
             <input type="text" class="Mail" placeholder="Type your Email" />
-            <input type="text" class="PT" placeholder="Type your password" />
-            <input type="text" class="CP" placeholder="Confirm your password" />
+            <input type="password" class="PT" placeholder="Type your password" />
+            <input type="password" class="CP" placeholder="Confirm your password" />
         </div>
 
         <input type="button" class="Reg" value="Create Account" onclick="location.href=''" />
@@ -32,7 +34,7 @@
             <p class="Relog">Already have an account? @Html.ActionLink("Sign In", "LoginPage")</p>
         </div>
 
-        <img src="\images\regimg.jpeg" class="Logo" />
+        <img src="~/images/reg.jpg"  class="Logo" alt="register" />
 
     </form>
 </body>

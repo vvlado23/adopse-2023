@@ -1,12 +1,14 @@
-﻿@page "/"
+﻿@page ""
 @model ADOPSE_2023.Models.UserController
 
-@{
-    Layout = "../Shared/_Layout.cshtml";
-}
 
 <head>
     <title>Login Page</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="~/css/Login.css" asp-append-version="true" />
 </head>
 <body>
 
@@ -16,7 +18,7 @@
 
     <div>
         <input type="text" class="UT" placeholder="Type your username" />
-        <input type="text" class="PT" placeholder="Type your password" />
+        <input type="password" class="PT" placeholder="Type your password" />
     </div>
 
     <input type="button" value="Login" class="Log" onclick="location.href='/Home/HomePage'" />
