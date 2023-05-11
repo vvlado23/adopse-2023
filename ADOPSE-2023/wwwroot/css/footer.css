@@ -107,7 +107,7 @@ footer {
     background: #FF0000;
 }
 
-    .top .media-icons a:nth-child(5):hover {
+.top .media-icons a:nth-child(5):hover {
         color: #FF0000;
         background: #fff;
-    }
+}
