@@ -7,7 +7,7 @@
     position: absolute;
     width: 50%;
     left: 45%;
-    top: 15%;
+    top: 20%;
     font-family: sans-serif;
     font-weight: 700;
     font-size: 48px;
@@ -79,13 +79,6 @@ input[type='text'] {
     border: 2px solid #000000;
     border-radius: 14px;
 }
-.bx bx-user {
-    position: absolute;
-    width: 735px;
-    height: 64px;
-    left: 35%;
-    top: 400px;
-}
 .PT {
     box-sizing: border-box;
     position: absolute;
@@ -103,8 +96,8 @@ input[type='text'] {
     position: absolute;
     width: 193px;
     height: 48px;
-    left: 35%;
-    top: 55%;
+    left: 36%;
+    top: 58%;
     background: #815ba5;
     border-radius: 56px;
     font-weight: bold;
@@ -114,8 +107,8 @@ input[type='text'] {
         position: absolute;
         width: 193px;
         height: 48px;
-        left: 35%;
-        top: 55%;
+        left: 36%;
+        top: 58%;
         background: #986ebf;
         border-radius: 56px;
         font-weight: bold;
@@ -126,8 +119,8 @@ input[type='text'] {
     position: absolute;
     width: 196px;
     height: 48px;
-    left: 55%;
-    top: 55%;
+    left: 53%;
+    top: 58%;
     background: #815ba5;
     border-radius: 56px;
     font-size: large;
@@ -138,8 +131,8 @@ input[type='text'] {
         position: absolute;
         width: 196px;
         height: 48px;
-        left: 55%;
-        top: 55%;
+        left: 53%;
+        top: 58%;
         background: #986ebf;
         border-radius: 56px;
         font-size: large;
