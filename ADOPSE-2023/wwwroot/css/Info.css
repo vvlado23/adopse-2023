@@ -3,34 +3,18 @@
     position: absolute;
     
     left: 21%;
-    top: 10%;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    top: 8%;
+    font-family: sans-serif;    
     font-size: 36px;
-    line-height: 24px;
-    /* or 67% */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.006em;
     color: #000000;
 }
 .classNumber {
     position: absolute;
    
     left: 31%;
-    top: 10%;
+    top: 8%;
     font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 36px;
-    line-height: 24px;
-    /* or 67% */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.006em;
     color: #000000;
 }
 .sendmail {
@@ -41,8 +25,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-
-
 
     color: #625FF5;
     cursor: pointer;
@@ -64,7 +46,7 @@
 .actualTmima {
     position: absolute;
     left: 21%;
-    top: 15%;
+    top: 14%;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;

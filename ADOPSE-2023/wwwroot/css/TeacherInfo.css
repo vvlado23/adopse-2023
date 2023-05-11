@@ -1,316 +1,153 @@
-﻿body {
-}
+﻿
 .kathigName {
     position: absolute;
-    width: 266px;
-    height: 77px;
-    left: 600px;
-    top: 21px;
+    left: 21%;
+    top: 9%;
     font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 24px;
-    /* or 67% */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.006em;
+    font-weight: 600;
+    font-size: 25px;
     color: #000000;
 }
 
-.classNumber {
-    position: absolute;
-    width: 145px;
-    height: 91px;
-    left: 900px;
-    top: 14px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 24px;
-    /* or 67% */
-
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.006em;
-    color: #000000;
-}
-
-.sendmail {
-    position: absolute;
-    width: 100px;
-    height: 12px;
-    left: 2000px;
-    top: 53px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 20px;
-    /* or 200% */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.006em;
-    color: #625FF5;
-}
 .userPic {
 
     position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 1800px;
-    top: 53px;
+    width: 4%;
+    height: 7%;
+    left: 70%;
+    top: 8%;
 }
+
 #tmimaTag {
     position: absolute;
-    width: 77px;
-    height: 26px;
-    left: 600px;
-    top: 98px;
+    left: 21%;
+    top: 14%;
     font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 20px;
-    line-height: 24px;
-    /* or 120% */
-
-    letter-spacing: -0.006em;
     color: #000000;
 }
 
 .actualTmima {
     position: absolute;
-    width: 353px;
-    height: 36px;
-    left: 600px;
-    top: 110px;
+    left: 21%;
+    top: 15%;
     font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 20px;
-    line-height: 24px;
-    /* or 120% */
-
-    letter-spacing: -0.006em;
     color: #000000;
 }
 
 #perifragiTag {
     position: absolute;
-    width: 118px;
-    height: 29px;
-    left: 600px;
-    top: 164px;
-    font-family: sans-serif;
-    font-style: normal;
+    left: 21%;
+    top: 18%;
+    font-family: sans-serif; 
     font-weight: 600;
     font-size: 20px;
-    line-height: 24px;
-    /* or 120% */
-
-    display: flex;
-    align-items: flex-end;
-    letter-spacing: -0.006em;
 }
 
 .actualPerigrafi {
     position: absolute;
-    width: 899px;
-    height: 69px;
-    left: 600px;
-    top: 180px;
+    left: 21%;
+    top: 21%;
     font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    letter-spacing: -0.006em;
-    color: #000000;
+    width: 50%;
 }
 
 .emailtag {
     position: absolute;
-    width: 155px;
-    height: 31px;
-    left: 600px;
-    top: 320px;
+    left: 21%;
+    top: 27%;
     font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
     color: #000000;
 }
 
 .actualemail {
     position: absolute;
-    width: 401px;
-    height: 31px;
-    left: 800px;
-    top: 325px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
+    left: 27%;
+    top: 27%;
+    font-family: sans-serif;   
     color: #687EF4;
+    cursor: pointer;
 }
 
 .line1 {
     position: absolute;
-    width: 1258px;
-    left: 590px;
-    top: 335px;
+    width: 50%;
+    left: 21%;
+    top: 29%;
     border-bottom: 1px solid;
 }
 
 .urltag {
     position: absolute;
-    width: 155px;
-    height: 31px;
-    left: 600px;
-    top: 350px;
+    left: 21%;
+    top: 30%;
     font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
-    color: #000000;
 }
 
 .actualURLtag {
     position: absolute;
-    width: 401px;
-    height: 31px;
-    left: 800px;
-    top: 350px;
+    left: 27%;
+    top: 30%;
     font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
     color: #687EF4;
 }
 
 .line2 {
     position: absolute;
-    width: 1258px;
-    left: 590px;
-    top: 365px;
+    width: 50%;
+    left: 21%;
+    top: 32%;
     border-bottom: 1px solid;
 }
 
 .rolosatg {
     position: absolute;
-    width: 155px;
-    height: 31px;
-    left: 600px;
-    top: 380px;
+    left: 21%;
+    top: 33%;
     font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
-    color: #000000;
 }
 
 .actualrolostag {
     position: absolute;
-    width: 401px;
-    height: 31px;
-    left: 800px;
-    top: 380px;
+    left: 27%;
+    top: 33%;
     font-family: sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
 }
 
 .line3 {
     position: absolute;
-    width: 1258px;
-    left: 590px;
-    top: 395px;
+    width: 50%;
+    left: 21%;
+    top: 35%;
     border-bottom: 1px solid;
 }
 
+
 .mathimatag {
     position: absolute;
-    width: 155px;
-    height: 31px;
-    left: 600px;
-    top: 407px;
+    left: 21%;
+    top: 36%;
     font-family: sans-serif;
-    font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
-    color: #000000;
 }
 
 .actualmathima {
     position: absolute;
-    width: 405px;
-    height: 31px;
-    left: 800px;
-    top: 407px;
+    left: 27%;
+    top: 36%;
+    font-family: sans-serif;
 }
 
 .line4 {
     position: absolute;
-    width: 1258px;
-    left: 590px;
-    top: 420px;
+    width: 50%;
+    left: 21%;
+    top: 38%;
     border-bottom: 1px solid;
-}
-
-.dyskolia {
-    position: absolute;
-    width: 155px;
-    height: 31px;
-    left: 600px;
-    top: 430px;
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    /* or 150% */
-
-    letter-spacing: -0.006em;
-    color: #000000;
-}
-
-.actualDyskolia {
-    position: absolute;
-    width: 401px;
-    height: 31px;
-    left: 800px;
-    top: 430px;
 }

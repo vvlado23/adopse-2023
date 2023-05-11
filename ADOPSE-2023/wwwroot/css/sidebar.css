@@ -2,19 +2,19 @@
 /* Google Fonts - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-* {
+/*  *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-}
+}*/
 
 body {
-    min-height: 100%;
-    background: #ffffff;
+    z-index: 3;
 }
 
 nav {
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,6 +24,7 @@ nav {
     align-items: center;
     background: rgb(158, 199, 202);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    border-bottom: solid;
 }
 
     nav .logo {
@@ -116,8 +117,8 @@ nav.open .sidebar {
     width: 200%;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.4s ease;
-    background: rgba(0, 0, 0, 0.3);
+     transition: all 0.4s ease;
+     background: rgba(0, 0, 0, 0.3); 
 }
 
 nav.open ~ .overlay {
