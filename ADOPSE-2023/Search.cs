@@ -14,7 +14,7 @@ namespace searchEngine
         public static void IndexDocuments()
         {
             // Create a connection to the MySQL database
-            string connectionString = "server=localhost;database=mydatabase;uid=myusername;password=mypassword;";
+            string connectionString = "server=dblabs.iee.ihu.gr;database=3306;uid=it185158;password=Ogma123!;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
 
