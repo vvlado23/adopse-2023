@@ -2,40 +2,17 @@
 @model ADOPSE_2023.Models.UserController;
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_ModuleFiltersLayout.cshtml";
+
 }
 
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="~/css/Courses.css" />
     </head>
     <body>
-    <div class="container">
-        <div class="filters">
-            <h3 style="font-size:large">Category</h3>
-            <div class="filter">
-                <h4 style="font-size:large">Color</h4>
-                <input type="checkbox" id="red" name="color" value="red">
-                <label for="red">Red</label><br>
-                <input type="checkbox" id="blue" name="color" value="blue">
-                <label for="blue">Blue</label><br>
-                <input type="checkbox" id="green" name="color" value="green">
-                <label for="green">Green</label><br>
-            </div>
-            <div class="filter">
-                <h4>DIfficulty</h4>
-                <input type="radio" id="Begginer" name="dif" value="Begginer">
-                <label for="Begginer">Begginer</label><br>
-                <input type="radio" id="Intermediate" name="dif" value="Intermediate">
-                <label for="Intermediate">Intermediate</label><br>
-                <input type="radio" id="Hard" name="dif" value="Hard">
-                <label for="Hard">Hard</label><br>
-            </div>
-        </div>
-        
-    </div>
+    
 
     </body>
 

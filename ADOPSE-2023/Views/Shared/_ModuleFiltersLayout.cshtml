@@ -1,0 +1,147 @@
+﻿@using MySql.Data.MySqlClient;
+@{
+
+    var data = new List<string>();
+
+    using (var connection = MySqlconnection.GetConnection())
+    {
+        using (var command = new MySqlCommand("SELECT CategoryName FROM categories", connection))
+        {
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var ColumnName = reader.GetString(0);
+                    data.Add(ColumnName);
+                }
+            }
+        }
+    }
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title> <!--Geia na leitourgisei thelei na to rithmisis kai apo ton antistoixo controller, pane sto InfoController gia paradeigma-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="~/images/ecne.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/footer.css" />
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="~/css/sidebar.css">
+
+    <link rel="stylesheet" href="~/css/Courses.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Ogma</span>
+            <img class="logo-image" src="~/images/ecne.png" />
+        </div>
+        <div class="login">
+            <a style="color:black" onclick="location.href='/Home/LoginPage'"><i class="bx bx-log-in bx-md"></i></a>
+        </div>
+        <div class="sidebar">
+            <div class="logo" style="border:2px solid black; width:89%; border-radius:0; background-color:aliceblue">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Ogma</span>
+                <img class="logo-image" src="~/images/ecne.png" />
+            </div>
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a onclick="location.href='/Home/HomePage'" class="nav-link">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="link">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a onclick="location.href='/Info/CoursesPage'" class="nav-link">
+                            <i class='bx bx-book icon'></i>
+                            <span class="link">Courses</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a onclick="location.href='/Info/CalendarPage'" class="nav-link">
+                            <i class='bx bx-calendar icon'></i>
+                            <span class="link">Calendar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <section class="overlay"></section>
+    <div>
+        <main>
+            <div class="container">
+                <div class="filters">
+                    <h3 style="font-size:large">Category</h3>
+                    <ul class="categories" id="datalist">
+                        @foreach (var item in data)
+                        {
+                            <li><input type="checkbox" /><label>@item</label></li>
+                        }
+                    </ul>
+                    <div class="toggle">
+                        <span class="tog_text">Show More</span>
+                    </div>
+
+                    <div class="filter">
+                        <h4 style="font-size:large">Color</h4>
+                        <input type="checkbox" id="red" name="color" value="red">
+                        <label for="red">Red</label><br>
+                        <input type="checkbox" id="blue" name="color" value="blue">
+                        <label for="blue">Blue</label><br>
+                        <input type="checkbox" id="green" name="color" value="green">
+                        <label for="green">Green</label><br>
+                    </div>
+
+                    <div class="filter">
+                        <h4>DIfficulty</h4>
+                        <input type="radio" id="Begginer" name="dif" value="Begginer">
+                        <label for="Begginer">Begginer</label><br>
+                        <input type="radio" id="Intermediate" name="dif" value="Intermediate">
+                        <label for="Intermediate">Intermediate</label><br>
+                        <input type="radio" id="Hard" name="dif" value="Hard">
+                        <label for="Hard">Hard</label><br>
+                    </div>
+                </div>
+
+            </div>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <!-- <i class="fab fa-slack"></i>-->
+                    <img class="logo-image" src="~/images/ecne.png" />
+                    <span class="logo_name">Ogma</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/sidebarScript.js"></script>
+</body>
+</html>
+

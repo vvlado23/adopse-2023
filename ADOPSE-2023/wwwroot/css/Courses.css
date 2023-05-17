@@ -1,32 +1,43 @@
 ﻿.container {
     position: absolute;
-    width: 17%;
-    height: 700px;
-    left: 10px;
-    top: 9%;
+    width: 400px;
+    left: 5px;
+    top: 80px;
     background-color: aliceblue;
     border: solid;
     border-radius: 11px;
-    text-align:left;
 }
 
-.filters {
-    width: 40%;
-    align-items:center;
+.filters ul li {
+    margin-bottom: 5px;
+    list-style-type: none;
+    position:relative;
 }
 
-.filter {
-    margin-bottom: 20px;
+.filters ul li:before{
+    content:"";
+    position:absolute;
+    top:8px;
+    left:-12px;
+    width:5px;
+    height:5px;
+    border-radius:50%;
 }
 
-.results {
-    width: 70%;
+.filters .toggle{
+    margin-top:15px;
+    font-weight:700;
+    color:red;
+    cursor:pointer;
+    font-size:15px;
 }
 
-.item {
-    margin-bottom: 10px;
+.filters ul.active{
+    height:auto;
 }
 
-input[type=checkbox] {
-    margin-right: 5px;
+.filters .toggle.active .fas{
+    transform: rotate();
 }
+
+
