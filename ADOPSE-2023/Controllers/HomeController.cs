@@ -23,8 +23,8 @@ namespace ADOPSE_2023.Controllers
 
         public IActionResult HomePage()
         {
-            Search search = new Search();
-            search.searchTerm();
+            //Search search = new Search();
+            //search.searchTerm();
             return View();
         }
     }
