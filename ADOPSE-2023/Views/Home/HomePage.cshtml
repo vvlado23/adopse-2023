@@ -1,4 +1,4 @@
-@model ADOPSE_2023.Models.UserController;
+@model List<ADOPSE_2023.Controllers.HomeController.GoogleEvent>;
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,32 +12,31 @@
     <body>
     <iframe class="my_calendar" src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%239E69AF&ctz=Europe%2FAthens&showPrint=0&showTitle=0&mode=WEEK&src=bWFya2xlb2xlb0BnbWFpbC5jb20&src=NDk3NjU2ZmYyODk4MGY4MjA4MDdiM2ZmZGM3YzdjNWZiNDQzNDczNTk0MTZlMDExY2UxMDljN2ExZjA4ZmQyMkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4tZ2IuZ3JlZWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZWwuZ3JlZWsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%23E67C73&color=%2333B679&color=%230B8043&color=%230B8043" style="border-width:0" width="100%" height="75%" frameborder="0" scrolling="no"></iframe>
     <h3>Upcoming events</h3>
-    <hr />
-    if (ViewBag.EventList != null)
+    @if (Model != null && Model.Count > 0)
     {
-    <table class="table table-hover">
-        <tr>
-            <th>Event title</th>
-            <th>Organizer</th>
-            <th>Description</th>
-            <th>Start time</th>
-            <th>End time</th>
-        </tr>
-        @foreach (var item in ViewBag.EventList as List<ADOPSE_2023.Controllers.calendarEvent>)
-        {
+        <table>
             <tr>
-                <td>@item.Summary</td>
-                <td>@item.Organizer</td>
-                <td>@item.Description</td>
-                <td>@item.StartTime</td>
-                <td>@item.EndTime</td>
+                <th>Summary</th>
+                <th>Description</th>
+                <th>Organizer</th>
+                <th>Start</th>
+                <th>End</th>
             </tr>
-        }
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Summary</td>
+                    <td>@item.Description</td>
+                    <td>@item.Organizer</td>
+                    <td>@item.Start</td>
+                    <td>@item.End</td>
+                </tr>
+            }
+        </table>
     }
     else
     {
-        <div class="alert alert-danger">No Upcoming events</div>
+        <p>No upcoming events found.</p>
     }
     </body>
 
