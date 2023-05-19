@@ -13,6 +13,7 @@ namespace ADOPSE_2023
     public class Search
     {
         private static RAMDirectory indexDirectory; // Declare indexDirectory as a class-level field
+
         public static void IndexDocuments()
         {
             // Create a connection to the MySQL database
@@ -24,44 +25,53 @@ namespace ADOPSE_2023
 
             // Fetch data from the MySQL table
             string query = "SELECT idModules, moduleName, moduleDesc FROM modules";
+            
             MySqlCommand command = new MySqlCommand(query,connection);
-            MySqlDataReader reader = command.ExecuteReader();
-
-            // Add data to the Lucene index
-            while (reader.Read())
+            try
             {
-                Document doc = new Document();
-                doc.Add(new Field("idModules", reader["idModules"].ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
-                doc.Add(new Field("moduleName", reader["moduleName"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
-                doc.Add(new Field("moduleDesc", reader["moduleDesc"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
-                indexWriter.AddDocument(doc);
-            }
+                MySqlDataReader reader;
+                reader = command.ExecuteReader();
 
-            // Commit the changes to the Lucene index
-            indexWriter.Commit();
 
-            reader.Close(); // Close the reader before reusing it
 
-            //check doc
-            /*IndexReader indexReader = DirectoryReader.Open(indexDirectory,true);
-            IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-            Query query2 = new MatchAllDocsQuery();
+                // Add data to the Lucene index
+                while (reader.Read())
+                {
+                    Document doc = new Document();
+                    doc.Add(new Field("idModules", reader["idModules"].ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+                    doc.Add(new Field("moduleName", reader["moduleName"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
+                    doc.Add(new Field("moduleDesc", reader["moduleDesc"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
+                    indexWriter.AddDocument(doc);
+                }
 
-            // Execute the query and retrieve the search results
-            TopDocs results = indexSearcher.Search(query2, int.MaxValue);
+                // Commit the changes to the Lucene index
+                indexWriter.Commit();
 
-            // Process the search results
-            Console.WriteLine("Check DOC:");
-            foreach (ScoreDoc scoreDoc in results.ScoreDocs)
-            {
-                Document doc = indexSearcher.Doc(scoreDoc.Doc);
-                // Output the contents of the document
-                Console.WriteLine("IDmodules: {0}, ModulesName: {1}, ModuleDesc: {2}", doc.Get("idModules"), doc.Get("moduleName"), doc.Get("moduleDesc"));
-            } */
 
-            reader = command.ExecuteReader(); // Re-execute the command to start from the beginning
+                reader.Close(); // Close the reader before reusing it
 
-        
+
+                //check doc
+                /*IndexReader indexReader = DirectoryReader.Open(indexDirectory,true);
+                IndexSearcher indexSearcher = new IndexSearcher(indexReader);
+                Query query2 = new MatchAllDocsQuery();
+
+                // Execute the query and retrieve the search results
+                TopDocs results = indexSearcher.Search(query2, int.MaxValue);
+
+                // Process the search results
+                Console.WriteLine("Check DOC:");
+                foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+                {
+                    Document doc = indexSearcher.Doc(scoreDoc.Doc);
+                    // Output the contents of the document
+                    Console.WriteLine("IDmodules: {0}, ModulesName: {1}, ModuleDesc: {2}", doc.Get("idModules"), doc.Get("moduleName"), doc.Get("moduleDesc"));
+                } */
+
+                reader = command.ExecuteReader(); // Re-execute the command to start from the beginning
+
+            }catch (Exception ex) { }
+
             // Close the Lucene index and MySQL connection
             indexWriter.Dispose();
             connection.Close();
@@ -103,6 +113,7 @@ namespace ADOPSE_2023
 
         public static void SearchDocumentsWild(string searchTerm, RAMDirectory indexDirectory)
         {
+            Search.IndexDocuments();
             Console.WriteLine("Searching...");
 
             // Open the Lucene index
@@ -139,7 +150,7 @@ namespace ADOPSE_2023
         public void searchTerm()
         {
             // Index documents
-           Search.IndexDocuments();
+           
 
             // Search for documents
             //Search.SearchDocuments("Δια", indexDirectory);
