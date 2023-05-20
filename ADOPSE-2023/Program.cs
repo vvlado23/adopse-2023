@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using Lucene.Net.Store;
+using ADOPSE_2023;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,3 +21,23 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+/*
+// Faceted search parameters
+string priceFilter = "free";
+string difficultyFilter = "beginner";
+int ratingFilter = 4;
+
+// Call the faceted search logic
+List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter);
+
+// Display the filtered modules
+foreach (Module module in filteredModules)
+{
+    Console.WriteLine($"Module ID: {module.moduleName}");
+    Console.WriteLine($"Module Name: {module.idModules}");
+    Console.WriteLine($"Price: {module.Price}");
+    Console.WriteLine($"Rating: {module.Rating}");
+    Console.WriteLine();
+}
+*/
