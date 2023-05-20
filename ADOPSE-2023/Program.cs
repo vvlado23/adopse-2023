@@ -30,10 +30,8 @@ List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficul
 // Display the filtered modules
 foreach (Module module in filteredModules)
 {
-    Console.WriteLine($"Module ID: {module.Id}");
-    Console.WriteLine($"Module Name: {module.Name}");
+   
     Console.WriteLine($"Price: {module.Price}");
-    Console.WriteLine($"Difficulty: {module.Difficulty}");
     Console.WriteLine($"Rating: {module.Rating}");
     Console.WriteLine();
 }
