@@ -42,23 +42,4 @@
     transform: rotate();
 }
 
-.grid-container {
-    position: absolute;
-    left: 440px;
-    top: 100px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    padding: 10px;
-}
-
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    margin: 8px;
-    width: 200px;
-    height: 200px;
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-}
 
