@@ -7,7 +7,7 @@ namespace ADOPSE_2023
     {
         public static MySqlConnection GetConnection()
         {
-            string connectionString = "server=dblabs.iee.ihu.gr;database=it185158;uid=it185158;password=Ogma123!;";
+            string connectionString = "server=it154484.mysql.database.azure.com;database=it185158;uid=it185158;password=Ogma123!;";
             var connection = new MySqlConnection(connectionString);
             try
             {
