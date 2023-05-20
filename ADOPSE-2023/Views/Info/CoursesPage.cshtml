@@ -1,20 +1,106 @@
 ﻿@page "/CoursesPage"
+@using ADOPSE_2023;
+@using MySql.Data.MySqlClient;
 @model ADOPSE_2023.Models.UserController;
 
 @{
     Layout = "~/Views/Shared/_ModuleFiltersLayout.cshtml";
+    var data = new List<string>();
 
+    {
+        using (var connection = DatabaseConnection.GetConnection())
+        {
+            using (var command = new MySqlCommand("SELECT * FROM modules", connection))
+            {
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine("IdModules: {0}", reader[8]);
+                        var ColumnName = reader.GetString(1);
+                        data.Add(ColumnName);
+                    }
+                }
+            }
+        }
+    }
 }
 
 <html>
-    <head>
+   <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .grid-container {
+            position: absolute;
+            left: 440px;
+            top: 100px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius : 8px;
+            box-shadow: 2px 1px 4px #888888;
+            margin: 8px;
+            width: 230px;
+            height: 230px;
+            padding: 10px;
+        }
+
+        .grid-item:hover {
+            box-shadow: 0.5px 0.5px 4px #888888;
+        }
+
+            .grid-item:active {
+                box-shadow: 2px 1px 10px #888888 inset,-1px -0.5px 10px #888888 inset;
+            }
+
+        .grid-item-title {
+            font-size: 18px;
+            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 2.4em; /* (Number of lines you want visible) * (line-height) */
+            line-height: 1.2em;
+        }
+
+        .grid-item-description {
+            font-size: 16px;
+            text-align: start;
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 5em; /* (Number of lines you want visible) * (line-height) */
+            line-height: 1em;
+        }
+
+        .grid-item-teacher {
+            font-size: 16px;
+            opacity: 0.4;
+            text-align: start;
+        }
+
+    </style>
     </head>
     <body>
-    
+    <div class="grid-container">
+        @foreach (var item in data)
+        {
+            <div class="grid-item">
+                <div class="grid-item-title">@item</div>
+                <div class="grid-item-description">asdsadasdsadasdsadasdsadasdsadasdsadasdsadasdsadasdsadv asdsadaasd asd asd as dasd assdsadasdsadasdsadasdsadasdsad asdsadasdsadasdsadasdsad asdsadasdsadasdsadasdsad  asdsadasdsadasdsadasdsadasdsad</div>
+                <div class="grid-item-teacher">Σαλαμπάσης</div>
+                <div></div>
+            </div>
+        }
+    </div>
 
     </body>
 
-    
+
 </html>

@@ -142,7 +142,6 @@ namespace ADOPSE_2023
                 Console.WriteLine("IdModules: {0}, ModuleName: {1}, ModuleDesc: {2}",
                     doc.Get("idModules"), doc.Get("moduleName"), doc.Get("moduleDesc"));
             }
-
             // Close the Lucene index
             indexReader.Dispose();
             indexDirectory.Dispose();
