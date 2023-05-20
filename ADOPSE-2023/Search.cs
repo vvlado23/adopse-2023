@@ -1,23 +1,23 @@
 using System;
+using System.Collections.Generic;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
 using Lucene.Net.QueryParsers;
 using Lucene.Net.Search;
 using Lucene.Net.Store;
-using Microsoft.CodeAnalysis.Elfie.Serialization;
 using MySql.Data.MySqlClient;
 
 namespace ADOPSE_2023
 {
     public class Search
     {
-        private static RAMDirectory indexDirectory; // Declare indexDirectory as a class-level field
+        public static RAMDirectory indexDirectory; // Declare indexDirectory as a class-level field
 
         public static void IndexDocuments()
         {
             // Create a connection to the MySQL database
-            MySqlConnection connection = DatabaseConnection.GetConnection();
+           MySqlConnection connection = DatabaseConnection.GetConnection();
 
             // Create a Lucene index in memory
             indexDirectory = new RAMDirectory();
@@ -78,37 +78,59 @@ namespace ADOPSE_2023
 
         }
 
-        public static void SearchDocuments(string searchTerm,RAMDirectory indexDirectory)
+        public static List<Module> SearchDocuments(string searchTerm, RAMDirectory indexDirectory)
         {
-
-            Console.WriteLine("Searching...");
-            // Open the Lucene index
-            IndexReader indexReader = DirectoryReader.Open(indexDirectory,true);
-            IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-
-            // Create a query parser
-            QueryParser queryParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "moduleName", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
-
-            // Parse the search term
-            Query query = queryParser.Parse(searchTerm);
-
-            // Use Lucene to search for data
-            TopDocs results = indexSearcher.Search(query, 10);
-
-            //show Results
-            Console.WriteLine("Search Results: ");
-            // Process the search results
-            foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+            IndexReader indexReader = null;
+            try
             {
-                Document doc = indexSearcher.Doc(scoreDoc.Doc);
-                Console.WriteLine("IdModules: {0}, ModuleName: {1}, ModuleDesc: {2}",
-                doc.Get("idModules"), doc.Get("moduleName"), doc.Get("moduleDesc"));
-            }
+                Search.IndexDocuments();
+                Console.WriteLine("Searching...");
 
-            // Close the Lucene index
-            indexReader.Dispose();
-            indexDirectory.Dispose();
-        }
+                // Open the Lucene index
+                indexReader = DirectoryReader.Open(indexDirectory, true);
+                IndexSearcher indexSearcher = new IndexSearcher(indexReader);
+
+                // Create a query parser
+                QueryParser queryParser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, "moduleName", new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30));
+
+                // Enable leading wildcard support
+                queryParser.AllowLeadingWildcard = true;
+
+                // Create a wildcard query
+                Query wildQuery = queryParser.Parse("*" + searchTerm + "*");
+
+                // Use Lucene to search for data
+                TopDocs results = indexSearcher.Search(wildQuery, 10);
+
+                List<Module> searchResults = new List<Module>();
+
+                // Process the search results
+                foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+                {
+                    Document doc = indexSearcher.Doc(scoreDoc.Doc);
+                    Module result = new Module(
+                        price: "", 
+                        rating: 0,
+                        idModules: int.Parse(doc.Get("idModules")),
+                        moduleName: doc.Get("moduleName"),
+                        moduleDesc: doc.Get("moduleDesc")
+                    );
+                    searchResults.Add(result);
+                }
+
+                return searchResults;
+            }
+            finally
+            {
+                // Close the Lucene index
+                if (indexReader != null)
+                    indexReader.Dispose();
+
+                if (indexDirectory != null)
+                    indexDirectory.Dispose();
+            }
+        }   
+
 
 
         public static void SearchDocumentsWild(string searchTerm, RAMDirectory indexDirectory)
@@ -161,3 +183,4 @@ namespace ADOPSE_2023
 
     }
 }
+
