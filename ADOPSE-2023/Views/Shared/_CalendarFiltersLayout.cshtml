@@ -1,11 +1,20 @@
+<<<<<<< Updated upstream
 ﻿@using ADOPSE_2023;
 @using MySql.Data.MySqlClient;
+=======
+﻿@using MySql.Data.MySqlClient;
+@using ADOPSE_2023
+>>>>>>> Stashed changes
 
 @{
     var data = new List<string>();
     var data1 = new List<string>();
     var data2 = new List<string>();
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     using (var connection = DatabaseConnection.GetConnection())
     {
         using (var command = new MySqlCommand("SELECT CategoryName FROM categories", connection))
