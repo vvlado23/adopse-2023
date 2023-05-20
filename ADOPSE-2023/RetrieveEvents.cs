@@ -13,7 +13,15 @@ namespace ADOPSE_2023
             MySqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
-                Console.WriteLine(rd.GetString(0));
+                string col1 = rd["EventName"].ToString();
+                string col2 = rd["Eventdetails"].ToString();
+                string col3 = rd["EventStartsOn"].ToString();
+                string col4 = rd["EventsEndsOn"].ToString();
+                Console.WriteLine("Event name: ", col1);
+                Console.WriteLine("Event details: ", col2);
+                Console.WriteLine("Event starts on: ", col3);
+                Console.WriteLine("Event ends on: ", col4);
+                Console.WriteLine();
             }
             rd.Close();
             conn.Close();
