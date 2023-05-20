@@ -8,7 +8,7 @@ namespace ADOPSE_2023
         public void getEvents()
         {
             MySqlConnection conn = DatabaseConnection.GetConnection();
-            string query = "SELECT * FROM event";
+            string query = "SELECT EventName, Eventdetails, EventStartsOn, EventsEndsOn FROM event JOIN modules ON modules.idModules = event.idmodule JOIN lecturer ON lecturer.idLecturer = event.idlecturer";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
