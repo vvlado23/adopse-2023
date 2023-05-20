@@ -13,7 +13,7 @@ namespace ADOPSE_2023
 
             using (MySqlConnection connection = DatabaseConnection.GetConnection())
             {
-                string query = "SELECT moduleName, price, rating FROM modules WHERE price = @price AND difficulty = @difficulty AND rating = @rating";
+                string query = "SELECT moduleName,Difficulty, Price, Rating ,moduleDesc,idModules FROM modules WHERE price = @price AND difficulty = @difficulty AND rating = @rating";
                 MySqlCommand command = new MySqlCommand(query, connection);
                 command.Parameters.AddWithValue("@price", priceFilter);
                 command.Parameters.AddWithValue("@difficulty", difficultyFilter);
@@ -26,10 +26,11 @@ namespace ADOPSE_2023
                         string moduleName = reader["moduleName"].ToString();
                         string price = reader["price"].ToString();
                         int rating = Convert.ToInt32(reader["rating"]);
-                        string moduleDesc = reader["moduleDesc"].ToString();
+                        int difficulty = Convert.ToInt32(reader["rating"]);
+                        string moduleDesc = reader["ModuleDesc"].ToString();
                         int idModules = Convert.ToInt32(reader["idModules"]);
 
-                        Module module = new Module(idModules, moduleName, price, rating, moduleDesc);
+                        Module module = new Module(idModules, moduleName, price, rating, difficulty, moduleDesc);
                         filteredModules.Add(module);
                     }
                 }

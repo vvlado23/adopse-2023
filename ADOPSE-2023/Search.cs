@@ -111,6 +111,7 @@ namespace ADOPSE_2023
                     Module result = new Module(
                         price: "", 
                         rating: 0,
+                        difficulty: int.Parse(doc.Get("Difficulty")),
                         idModules: int.Parse(doc.Get("idModules")),
                         moduleName: doc.Get("moduleName"),
                         moduleDesc: doc.Get("moduleDesc")
