@@ -1,11 +1,12 @@
-﻿@using MySql.Data.MySqlClient;
+﻿@using ADOPSE_2023;
+@using MySql.Data.MySqlClient;
 
 @{
     var data = new List<string>();
     var data1 = new List<string>();
     var data2 = new List<string>();
 
-    using (var connection = MySqlconnection.GetConnection())
+    using (var connection = DatabaseConnection.GetConnection())
     {
         using (var command = new MySqlCommand("SELECT CategoryName FROM categories", connection))
         {
@@ -20,7 +21,7 @@
         }
     }        
 
-    using (var connection = MySqlconnection.GetConnection())
+    using (var connection = DatabaseConnection.GetConnection())
     {
         using (var command = new MySqlCommand("SELECT ModuleName FROM modules", connection))
         {
@@ -35,7 +36,7 @@
         }
     }
 
-    using (var connection = MySqlconnection.GetConnection())
+    using (var connection = DatabaseConnection.GetConnection())
     {
         using (var command = new MySqlCommand("SELECT LecturerName FROM lecturer", connection))
         {

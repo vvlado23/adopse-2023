@@ -1,10 +1,11 @@
-﻿@using MySql.Data.MySqlClient;
+﻿@using ADOPSE_2023;
+@using MySql.Data.MySqlClient;
 
 @{
     var data = new List<string>();
 
     {
-        using (var connection = MySqlconnection.GetConnection())
+        using (var connection = DatabaseConnection.GetConnection())
         {
             using (var command = new MySqlCommand("SELECT CategoryName FROM categories", connection))
             {
