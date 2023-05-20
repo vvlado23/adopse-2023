@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Lucene.Net.Store;
+using ADOPSE_2023;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,29 +20,6 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 
-<<<<<<< Updated upstream
-app.Run();
-=======
-// ...
-
-// Create an instance of the Search class
-Search search = new Search();
-
-Search.IndexDocuments();
-
-// Call the SearchDocuments method
-var searchTerm = "οικ";
-List<Module> searchResults = Search.SearchDocuments(searchTerm, Search.indexDirectory);
-
-// Display the search results
-foreach (Module module in searchResults)
-{
-    Console.WriteLine($"Module ID: {module.moduleName}");
-    Console.WriteLine($"Module Name: {module.idModules}");
-    Console.WriteLine($"Price: {module.Price}");
-    Console.WriteLine($"Rating: {module.Rating}");
-    Console.WriteLine();
-}
 app.Run();
 
 /*
@@ -63,4 +41,3 @@ foreach (Module module in filteredModules)
     Console.WriteLine();
 }
 */
->>>>>>> Stashed changes
