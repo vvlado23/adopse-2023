@@ -10,7 +10,7 @@ namespace ADOPSE_2023.Controllers
             return View();
         }
 
-        public IActionResult InfoTest()
+        public IActionResult InfoCourse()
         {
             ViewBag.Title = "Courses Info"; //title passed to infoTest.cshtml
             return View();

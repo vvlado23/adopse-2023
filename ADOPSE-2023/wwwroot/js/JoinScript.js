@@ -1,12 +1,11 @@
 ﻿//apothikeuei tin metavliti ston xoro localStorage
-function getTeacher(teacherName) {
-    var teacher = teacherName.innerHTML;
-    localStorage.setItem('teacher-name', teacher);
-    //console.log(teacher);
-}
+function getTeacher(teacher, depart, desc, email, pSite) {
 
-//den leitrougei me call function alla me ensomatomeno js
-function SetTeacher() {
-    var teacherName = localStorage.getItem('teacher-name')
-    document.getElementById("PlaceholderKathig").innerHTML = teacherName;
+
+    localStorage.clear();
+    localStorage.setItem('teacher-name', teacher);
+    localStorage.setItem('teacher-depart', depart);   
+    localStorage.setItem('teacher-desc', desc);
+    localStorage.setItem('teacher-email', email);
+    localStorage.setItem('teacher-pSite', pSite);
 }

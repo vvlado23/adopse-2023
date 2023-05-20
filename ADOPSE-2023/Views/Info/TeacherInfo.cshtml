@@ -11,22 +11,27 @@
     <link rel="stylesheet" href="~/css/TeacherInfo.css" asp-append-version="true" />
 </head>
 <body>
+
     <div class="kathigName" id="PlaceholderKathig"></div>
    
-    <span id="tmimaTag">Τμήμα:</span> 
-    <p class="actualTmima">Τμήμα Πληροφορικής</p>
+    <span class="tmimaTag">Τμήμα:</span> 
+    <div class="actualTmima" id="PlaceHolderTmima"></div>
+
+
     <div id="perifragiTag">Περιγραφή:</div>
-    <p class="actualPerigrafi">
-        Ο Μιχάλης Σαλαμπάσης έχει πτυχίο πληροφορικής και διδακτορικό στην Πληροφορική. 
-        Βασικά ερευνητικά του ενδιαφέροντα είναι η ανάκτηση πληροφοριών, προηγμένα συστήματα εξερευνητικής αναζήτησης, 
-        έξυπνη διαχείρισης πληροφορίας, σχεδίαση & αξιολόγηση διαδραστικών συστημάτων.
-    </p>
+    <div class="actualPerigrafi" id="PlaceholderDesc"></div>
+
+
     <img src="../images/default_user.png" alt="user" class="userPic"/>
+
     <div class="emailtag">Email:</div>
-    <div class="actualemail">Salamp@ihu.gr</div>
+    <div class="actualemail" id="PlaceholderEmail"></div>
+
     <hr class="line1" />
+
     <div class="urltag">Url:</div>
-    <a href="https://www.iee.ihu.gr/staff/salampasis-michalis/" class="actualURLtag">salampasis-michalis</a>
+    <a href="#" class="actualURLtag" id="PlaceholderPsite">Προσωπική Ιστοσελίδα</a>
+
     <hr class="line2" />
     <div class="rolosatg">Ρόλος:</div>
     <div class="actualrolostag">Καθηγήτης</div>
@@ -36,9 +41,20 @@
     <hr class="line4" />
     <script>
         //fernei tin metavliti apo ton xoro localstorage kai tin bazei sto div me id PlaceholderKathig
-        var teacherName = localStorage.getItem('teacher-name')
+        var teacherName = localStorage.getItem("teacher-name");
+        var teacherDepart = localStorage.getItem("teacher-depart");
+        var teacheDesc = localStorage.getItem("teacher-desc");
+        var teacherurl = localStorage.getItem("teacher-pSite");
+        var teachermail = localStorage.getItem("teacher-email");
         document.getElementById("PlaceholderKathig").innerHTML = teacherName;
+        document.getElementById("PlaceHolderTmima").innerHTML = teacherDepart;
+        document.getElementById("PlaceholderDesc").innerHTML = teacheDesc;
+        document.getElementById("PlaceholderEmail").innerHTML = teachermail;
+        var link = document.getElementById("PlaceholderPsite");
+        link.href = teacherurl;
+
     </script>
+
     <script src="~/js/JoinScript.js"></script>
 </body>
 </html>

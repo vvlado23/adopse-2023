@@ -87,14 +87,20 @@
     font-family: sans-serif;
     font-weight: 600;
 }
+.containerActualKathigites {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    left: 19%;
+    top: 325px;
+}
 .actualKathigites {
     position: relative;
     width: 50%;
     height: 50%;
     left: 19%;
-    top: 195px;
+    top: 13px;
     font-family: sans-serif;
-    color: #687EF4;
     color: #687EF4;
     text-align: left;
 }
