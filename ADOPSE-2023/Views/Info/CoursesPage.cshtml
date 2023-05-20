@@ -6,7 +6,7 @@
 @{
     Layout = "~/Views/Shared/_ModuleFiltersLayout.cshtml";
     var data = new List<string>();
-
+    var courses = new List<Module>();
     {
         using (var connection = DatabaseConnection.GetConnection())
         {
@@ -16,10 +16,12 @@
                 {
                     while (reader.Read())
                     {
-                        Console.WriteLine("IdModules: {0}", reader[8]);
+                        courses.Add(new Module(reader.GetInt32(0), reader.GetString(1), "0", 3, reader.GetString(2)));
+                        
                         var ColumnName = reader.GetString(1);
                         data.Add(ColumnName);
                     }
+                    Console.WriteLine("IdModules: {0}", courses);
                 }
             }
         }
