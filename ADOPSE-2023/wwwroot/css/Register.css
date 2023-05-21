@@ -3,11 +3,15 @@
     background: #F4FCFF;
 }
 
-.Title {
+.container {
     position: absolute;
-    width: 50%;
-    left: 25%;
-    top: 10%;
+    left: 100px;
+}
+
+.Title {
+    position: relative;
+    left: 450px;
+    top: 100px;
     font-family: sans-serif;
     font-weight: 700;
     font-size: 48px;
@@ -15,26 +19,21 @@
     color: #6B4B8A;
 }
 
-.contaier {
-    position:absolute;
-    left: 500px;
-}
-
 .Logo {
-    width: 20%;
-    height: 50%;
-    position:fixed;
-    top:17%;
-    left: 65%;
+    width: 500px;
+    height: 700px;
+    position: relative;
+    top:-200px;
+    left: 1200px;
     border: 2px solid #000000;
     border-radius: 200.5px;
 }
 
 .User {
-    position: absolute;
+    position: relative;
     width: 216px;
     height: 38px;
-    left: 15%;
+    left: 200px;
     top: 200px;
     font-family: sans-serif;
     font-style: normal;
@@ -72,22 +71,20 @@ input[type='text'] {
 }
 .UT {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 735px;
     height: 64px;
-    left: 15%;
-    top: 240px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
 }
 
 .Email {
-    position: absolute;
+    position: relative;
     width: 216px;
     height: 38px;
-    left: 15%;
-    top: 350px;
+    left: 200px;
+    top: 300px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -98,22 +95,20 @@ input[type='text'] {
 
 .Mail {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 735px;
     height: 60px;
-    left: 15%;
-    top: 400px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
 }
 
 .Pass {
-    position: absolute;
+    position: relative;
     width: 216px;
     height: 38px;
-    left: 15%;
-    top: 500px;
+    left: 200px;
+    top: 400px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -125,22 +120,20 @@ input[type='text'] {
 
 .PT {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 735px;
     height: 68px;
-    left: 15%;
-    top: 550px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
 }
 
 .ConfPass {
-    position: absolute;
+    position: relative;
     width: 216px;
     height: 38px;
-    left: 15%;
-    top: 650px;
+    left: 200px;
+    top: 500px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -151,33 +144,31 @@ input[type='text'] {
 
 .CP {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 735px;
     height: 60px;
-    left: 15%;
-    top: 700px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
 }
 
 .Reg {
-    position: absolute;
+    position: relative;
     width: 196px;
     height: 48px;
-    left: 27%;
-    top: 800px;
+    top:600px;
+    left:450px;
     background: #815ba5;
     border-radius: 56px;
     font-weight: bold;
     font-size: large;
 }
     .Reg:hover {
-        position: absolute;
+        position: relative;
         width: 196px;
         height: 48px;
-        left: 15%;
-        top: 900px;
+        left: 450px;
+        top: 603px;
         background: #986ebf;
         border-radius: 56px;
         font-weight: bold;
@@ -185,16 +176,34 @@ input[type='text'] {
     }
 
 .Relog {
-    position: absolute;
-    width: 20%;
+    position: relative;
+    width: 400px;
     height: 38px;
-    left: 25%;
-    top: 850px;
+    left: 410px;
+    top: 605px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 18px;
     color: #000000;
+}
+
+@media screen and (max-width:720px) {
+    .container {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        width: 12.5%;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .container {
+        width: 12.2%;
+    }
 }
     

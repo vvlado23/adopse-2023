@@ -3,11 +3,15 @@
     background: #F4FCFF;
 }
 
+.container{
+    position:absolute;
+    left:40%;
+}
 .Title {
-    position: absolute;
+    position: relative;
     width: 50%;
-    left: 45%;
-    top: 20%;
+    top: 100px;
+    left:160px;
     font-family: sans-serif;
     font-weight: 700;
     font-size: 48px;
@@ -16,11 +20,11 @@
 }
 
 .User {
-    position: absolute;
+    position: relative;
     width: 216px;
     height: 38px;
-    left: 35%;
-    top: 350px;
+    top: 250px;
+    left:-100px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -53,12 +57,11 @@ input[type='text'] {
     color: #000000;
 }
 .Pass {
-
-    position: absolute;
+    position: relative;
     width: 216px;
     height: 38px;
-    left: 35%;
-    top: 550px;
+    top: 350px;
+    left: -100px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -68,47 +71,43 @@ input[type='text'] {
 }
 
 .UT {
-
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 735px;
     height: 64px;
-    left: 35%;
-    top: 400px;
+    top: 210px;
+    left: -100px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
 }
 .PT {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     width: 735px;
     height: 68px;
-    left: 35%;
-    top: 600px;
+    top: 290px;
+    left: -100px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
-    
 }
 
 .Log {
-    position: absolute;
+    position: relative;
     width: 193px;
     height: 48px;
-    left: 36%;
-    top: 700px;
+    top: 400px;
     background: #815ba5;
     border-radius: 56px;
     font-weight: bold;
     font-size: large;
 }
     .Log:hover {
-        position: absolute;
+        position: relative;
         width: 193px;
         height: 48px;
-        left: 36%;
-        top: 700px;
+        top: 402px;
         background: #986ebf;
         border-radius: 56px;
         font-weight: bold;
@@ -116,12 +115,11 @@ input[type='text'] {
     }
 
 .Reg {
-    position: absolute;
+    position: relative;
     width: 196px;
     height: 48px;
-    right: 30%;
-
-    top: 700px;
+    top: 400px;
+    left:100px;
     background: #815ba5;
     border-radius: 56px;
     font-size: large;
@@ -129,13 +127,31 @@ input[type='text'] {
 }
 
     .Reg:hover {
-        position: absolute;
+        position: relative;
         width: 196px;
         height: 48px;
-        right: 30%;
-        top: 700px;
+        top: 402px;
         background: #986ebf;
         border-radius: 56px;
         font-size: large;
         font-weight: bold;
     }
+
+@media screen and (max-width:720px) {
+    .container {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        width: 12.5%;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .container {
+        width: 12.2%;
+    }
+}
+
