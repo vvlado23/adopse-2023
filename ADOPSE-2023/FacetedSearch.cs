@@ -33,9 +33,10 @@ namespace ADOPSE_2023
                         Module module = new Module(idModules, moduleName, price, rating, difficulty, moduleDesc);
                         filteredModules.Add(module);
                     }
+                    reader.Close(); // Close the reader after reading the data
                 }
             }
-
+           
             return filteredModules;
         }
     }
