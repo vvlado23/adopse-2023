@@ -12,7 +12,7 @@ namespace ADOPSE_2023
 
         public FetchData()
         {
-            this.connectionString = connectionString;
+           // this.connectionString = connectionString;
         }
 
         public DataTable FetchDataFromTable()

@@ -23,8 +23,8 @@ app.MapRazorPages();
 
 
 
-//string connectionString = "server=it154484.mysql.database.azure.com;database=it185158;uid=it185158;password=Ogma123!;";
 
+/* //try fetch
 FetchData dataFetcher = new FetchData();
 DataTable dataTable = dataFetcher.FetchDataFromTable();
 
@@ -37,19 +37,17 @@ foreach (DataRow row in dataTable.Rows)
 
     // Display the fetched data on the console
     Console.WriteLine($"Category ID: {idCategory}, Module ID: {idModule}, Category Name: {categoryName}");
-}
+}*/
 
 
-app.Run();
 
-/*
 // Faceted search parameters
-string priceFilter = "free";
-string difficultyFilter = "beginner";
-int ratingFilter = 4;
+string priceFilter = "0";
+string difficultyFilter = "3";
+int ratingFilter = 3;
 
 // Call the faceted search logic
-List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter);
+List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter,15374);
 
 // Display the filtered modules
 foreach (Module module in filteredModules)
@@ -58,6 +56,12 @@ foreach (Module module in filteredModules)
     Console.WriteLine($"Module Name: {module.idModules}");
     Console.WriteLine($"Price: {module.Price}");
     Console.WriteLine($"Rating: {module.Rating}");
+    Console.WriteLine($"Category: {module.categoryName}");
     Console.WriteLine();
 }
-*/
+
+app.Run();
+
+
+
+
