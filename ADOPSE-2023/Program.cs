@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Lucene.Net.Store;
 using ADOPSE_2023;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,25 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=HomePage}/{id?}");
 
 app.MapRazorPages();
+
+
+
+//string connectionString = "server=it154484.mysql.database.azure.com;database=it185158;uid=it185158;password=Ogma123!;";
+
+FetchData dataFetcher = new FetchData();
+DataTable dataTable = dataFetcher.FetchDataFromTable();
+
+// Process the fetched data
+foreach (DataRow row in dataTable.Rows)
+{
+    int idCategory = (int)row["idCategory"];
+    int idModule = (int)row["idModule"];
+    string categoryName = row["CategoryName"].ToString();
+
+    // Display the fetched data on the console
+    Console.WriteLine($"Category ID: {idCategory}, Module ID: {idModule}, Category Name: {categoryName}");
+}
+
 
 app.Run();
 
