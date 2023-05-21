@@ -22,12 +22,13 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 // Faceted search parameters
-string priceFilter = "0";
+string priceFilter = "80";
 string difficultyFilter = "3";
-int ratingFilter = 4;
+int ratingFilter = 3;
 
 // Call the faceted search logic
-List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter);
+List<Module> filteredModules = FacetedSearch.PerformSearch(categoryFilter:15374);
+//List<Module> filteredModules = FacetedSearch.PerformSearchAll(priceFilter, difficultyFilter, ratingFilter, 15374);
 
 
 
@@ -44,6 +45,7 @@ else
         Console.WriteLine($"moduleName: {module.moduleName}");
         Console.WriteLine($"Price: {module.Price}");
         Console.WriteLine($"Rating: {module.Rating}");
+        Console.WriteLine($"Difficulty: {module.Difficulty}");
         Console.WriteLine();
     }
 }
