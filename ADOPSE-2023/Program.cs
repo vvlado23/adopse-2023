@@ -20,7 +20,18 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 
+/*UserAuth register = new UserAuth();
+
+register.RegisterUser("test@email", "test", "test");
+
 app.Run();
+*/
+
+UserAuth login = new UserAuth();
+
+login.LoginUser("test", "test1");
+
+
 
 /*
 // Faceted search parameters
