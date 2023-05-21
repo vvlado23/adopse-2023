@@ -8,9 +8,12 @@
 
   
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="~/css/Info.css">
 </head>
 <body>
+
+
     <div class="infoPage">
         <div class="className">ΜΑΘΗΜΑΤΙΚΑ </div>
         <span id="tmimaTag">Τμήμα:</span>
@@ -24,7 +27,33 @@
         </div>
         <div class="rowKathigites">
             <div class="kathigitesTag">Καθηγητές:</div>
-            <div class="actualKathigites" onclick="location.href='/Info/TeacherInfo'">Σαλαμπάσης, Γουλίανας</div>
+            <div class="containerActualKathigites" onclick="location.href='/Info/TeacherInfo'">
+
+
+                @* <a href="/Info/TeacherInfo" class="actualKathigites"  onclick="getTeacher('Σαλαμπάσης','Ο Μιχάλης Σαλαμπάσης έχει
+                πτυχίο πληροφορικής και διδακτορικό στην Πληροφορική. Βασικά ερευνητικά του ενδιαφέροντα είναι η ανάκτηση πληροφοριών,
+                προηγμένα συστήματα εξερευνητικής αναζήτησης, έξυπνη διαχείρισης πληροφορίας,
+                σχεδίαση & αξιολόγηση διαδραστικών συστημάτων.','Τμήμα Πληροφορικής') ">Σαλαμπάσης</a>
+
+                <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher('Γουλίανας','Ο Κωνσταντίνος Γουλιάνας υπηρετεί ως Αναπληρωτής Καθηγητής του
+                τμήματος Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων στο Διεθνές Πανεπιστήμιο της Ελλάδος με γνωστικό αντικείμενο
+                Προγραμματισμός Επιστημονικών Εφαρμογών και Αριθμητική Ανάλυση – Νευρωνικά Δίκτυα.','Τμήμα Πληροφορικής') ">Γουλίανας</a>
+
+                <a href="/Info/TeacherInfo" class="actualKathigites"  onclick="getTeacher('Κώστογλου','Έχει εργαστεί στο παρελθόν ως
+                Μηχανολόγος Μηχανικός και Επιχειρησιακός Ερευνητής στον ιδιωτικό τομέα. Είναι διπλωματούχος Μηχανολόγος Μηχανικός από το ΑΠΘ, με δίπλωμα Master
+                στην Επιχειρησιακή Έρευνα από το Πανεπιστήμιο του Lancaster (Ηνωμένο Βασίλειο) και διδακτορικό στη Επιχειρησιακή Έρευνα και
+                την Εφαρμοσμένη Πληροφορική από το Πανεπιστήμιο Μακεδονίας.','Τμήμα Μηχανολόγων') ">Κώστογλου</a>*@
+
+
+                <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher('Σαλαμπάσης','Τμήμα Πληροφορικής', kathDesc1,'Salamp@ihu.gr','https://www.iee.ihu.gr/staff/salampasis-michalis/') ">Σαλαμπάσης</a>
+
+                <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher('Γουλίανας','Τμήμα Πληροφορικής',kathDesc2, 'gouliana@it.teithe.gr','https://people.iee.ihu.gr/~gouliana/home.html') ">Γουλίανας</a>
+
+                <a href="/Info/TeacherInfo" class="actualKathigites" onclick="getTeacher('Κώστογλου','Τμήμα Μηχανολόγων', kathDesc3, 'vkostogl@ihu.gr','https://people.iee.ihu.gr/~vkostogl/') ">Κώστογλου</a>
+
+
+
+            </div>
         </div>
         <hr class="line1" />
         <div class="rowEvents">
@@ -67,10 +96,16 @@
             <div style="width:10px"> </div>
             <input type="button" value="Συμμετοχή" class="simmetoxi" />
         </div>
-        
-    </div>
+        <script src="~/js/JoinScript.js"></script>
+        <script>
 
-    
+            var kathDesc1 = 'Ο Μιχάλης Σαλαμπάσης έχει πτυχίο πληροφορικής και διδακτορικό στην Πληροφορική.Βασικά ερευνητικά του ενδιαφέροντα είναι η ανάκτηση πληροφοριών,προηγμένα συστήματα εξερευνητικής αναζήτησης, έξυπνη διαχείρισης πληροφορίας, σχεδίαση & αξιολόγηση διαδραστικών συστημάτων.';
+            var kathDesc2 = 'Ο Κωνσταντίνος Γουλιάνας υπηρετεί ως Αναπληρωτής Καθηγητής του τμήματος Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων στο Διεθνές Πανεπιστήμιο της Ελλάδος με γνωστικό αντικείμενοΠρογραμματισμός Επιστημονικών Εφαρμογών και Αριθμητική Ανάλυση – Νευρωνικά Δίκτυα.';
+            var kathDesc3 = 'Έχει εργαστεί στο παρελθόν ωςΜηχανολόγος Μηχανικός και Επιχειρησιακός Ερευνητής στον ιδιωτικό τομέα.Είναι διπλωματούχος Μηχανολόγος Μηχανικός από το ΑΠΘ, με δίπλωμα Masterστην Επιχειρησιακή Έρευνα από το Πανεπιστήμιο του Lancaster(Ηνωμένο Βασίλειο) και διδακτορικό στη Επιχειρησιακή Έρευνα καιτην Εφαρμοσμένη Πληροφορική από το Πανεπιστήμιο Μακεδονίας.';
+
+
+        </script>
+    </div>
 </body>
 
 

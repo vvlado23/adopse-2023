@@ -81,14 +81,22 @@
     top: 105px;
 }
 .kathigitesTag {
-    position: center;
+    position: relative;
     font-family: sans-serif;
     font-weight: 600;
 }
+.containerActualKathigites {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    top: -3px;
+}
 .actualKathigites {
+    position: relative;
     cursor: pointer;
     font-family: sans-serif;
     color: #687EF4;
+    text-align: left;
 }
 .line1 {
     position: relative;
