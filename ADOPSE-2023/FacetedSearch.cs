@@ -7,13 +7,13 @@ namespace ADOPSE_2023
 {
     public static class FacetedSearch
     {
-        public static List<Module> PerformSearch(string priceFilter, string difficultyFilter, int ratingFilter, int categoryFilter)
+        public static List<Module> PerformSearchCategories(string priceFilter, string difficultyFilter, int ratingFilter, int categoryFilter)
         {
             List<Module> filteredModules = new List<Module>();
 
             using (MySqlConnection connection = DatabaseConnection.GetConnection())
             {
-                string query = "SELECT m.moduleName, m.Difficulty, m.Price, m.Rating, m.moduleDesc, c.CategoryName " +
+                string query = "SELECT idModules,m.moduleName, m.Difficulty, m.Price, m.Rating, m.moduleDesc, c.CategoryName " +
                "FROM modules AS m " +
                "JOIN moduleCategories AS mc ON m.idModules = mc.idModule " +
                "JOIN categories AS c ON mc.idCategory = c.idCategory " +

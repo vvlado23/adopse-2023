@@ -42,12 +42,12 @@ foreach (DataRow row in dataTable.Rows)
 
 
 // Faceted search parameters
-string priceFilter = "0";
+string priceFilter = "80";
 string difficultyFilter = "3";
 int ratingFilter = 3;
 
 // Call the faceted search logic
-List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter,15374);
+List<Module> filteredModules = FacetedSearch.PerformSearchCategories(priceFilter, difficultyFilter, ratingFilter,15374);
 
 Console.WriteLine("apotelesmata:");
 // Display the filtered modules
