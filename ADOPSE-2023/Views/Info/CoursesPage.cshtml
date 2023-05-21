@@ -1,43 +1,127 @@
 ﻿@page "/CoursesPage"
+@using ADOPSE_2023;
+@using MySql.Data.MySqlClient;
 @model ADOPSE_2023.Models.UserController;
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_ModuleFiltersLayout.cshtml";
+    var courses = new List<Module>();
+    {
+        using (var connection = DatabaseConnection.GetConnection())
+        {
+            using (var command = new MySqlCommand("SELECT * FROM modules", connection))
+            {
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        courses.Add(new Module(reader.GetInt32(0), reader.GetString(1), "0", 3, reader.GetString(2)));
+                    }
+                    Console.WriteLine("IdModules: {0}", courses[0].moduleName);
+                }
+            }
+        }
+    }
 }
 
 <html>
-    <head>
+   <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="~/css/Courses.css" />
+    <link rel="stylesheet" href="~/css/Courses.css" asp-append-version="true" />
+    <style>
+        .grid-container {
+            position: absolute;
+            left: 440px;
+            top: 100px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius : 8px;
+            box-shadow: 2px 1px 4px #888888;
+            margin: 8px;
+            width: 230px;
+            height: 230px;
+            padding: 10px;
+        }
+
+        .grid-item:hover {
+            box-shadow: 0.5px 0.5px 4px #888888;
+        }
+
+            .grid-item:active {
+                box-shadow: 2px 1px 10px #888888 inset,-1px -0.5px 10px #888888 inset;
+            }
+
+        .grid-item-title {
+            font-size: 18px;
+            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 2.4em; /* (Number of lines you want visible) * (line-height) */
+            line-height: 1.2em;
+        }
+
+        .grid-item-description {
+            font-size: 16px;
+            text-align: start;
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 5em; /* (Number of lines you want visible) * (line-height) */
+            line-height: 1em;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .grid-item-teacher {
+            font-size: 16px;
+            opacity: 0.4;
+            text-align: start;
+        }
+
+        .grid-item-stars {
+            position: absolute;
+            background-size: contain;
+            width: 198px;
+            bottom: 38px;
+            height: 34px;
+        }
+
+        .grid-item-price {
+            position: absolute;
+            bottom: 10px;
+            height: 24px;
+            font-size: 18px;
+            color: black;
+            background-color: #C8F415;
+            text-align: start;
+        }
+
+    </style>
     </head>
     <body>
-    <div class="container">
-        <div class="filters">
-            <h3 style="font-size:large">Category</h3>
-            <div class="filter">
-                <h4 style="font-size:large">Color</h4>
-                <input type="checkbox" id="red" name="color" value="red">
-                <label for="red">Red</label><br>
-                <input type="checkbox" id="blue" name="color" value="blue">
-                <label for="blue">Blue</label><br>
-                <input type="checkbox" id="green" name="color" value="green">
-                <label for="green">Green</label><br>
+    <div class="grid-container">
+        @foreach (var course in courses)
+        {
+            <div class="grid-item" onclick="location.href='/Info/InfoTest'">
+                <div class="grid-item-title">@course.moduleName</div>
+                <div class="grid-item-description">@course.moduleDesc</div>
+                <div class="grid-item-teacher">Σαλαμπάσης</div>
+                <div class="grid-item-stars" style="background-image: url( '../images/asteri1.png')"></div>
+                <div class="grid-item-price" >FREE</div>
             </div>
-            <div class="filter">
-                <h4>DIfficulty</h4>
-                <input type="radio" id="Begginer" name="dif" value="Begginer">
-                <label for="Begginer">Begginer</label><br>
-                <input type="radio" id="Intermediate" name="dif" value="Intermediate">
-                <label for="Intermediate">Intermediate</label><br>
-                <input type="radio" id="Hard" name="dif" value="Hard">
-                <label for="Hard">Hard</label><br>
-            </div>
-        </div>
-        
+        }
     </div>
 
     </body>
 
-    
+
 </html>

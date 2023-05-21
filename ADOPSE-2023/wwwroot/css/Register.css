@@ -6,13 +6,18 @@
 .Title {
     position: absolute;
     width: 50%;
-    left: 45%;
-    top: 15%;
+    left: 25%;
+    top: 10%;
     font-family: sans-serif;
     font-weight: 700;
     font-size: 48px;
     line-height: 16px;
     color: #6B4B8A;
+}
+
+.contaier {
+    position:absolute;
+    left: 500px;
 }
 
 .Logo {
@@ -29,8 +34,8 @@
     position: absolute;
     width: 216px;
     height: 38px;
-    left: 35%;
-    top: 300px;
+    left: 15%;
+    top: 200px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -70,8 +75,8 @@ input[type='text'] {
     position: absolute;
     width: 735px;
     height: 64px;
-    left: 35%;
-    top: 340px;
+    left: 15%;
+    top: 240px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
@@ -81,8 +86,8 @@ input[type='text'] {
     position: absolute;
     width: 216px;
     height: 38px;
-    left: 35%;
-    top: 450px;
+    left: 15%;
+    top: 350px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -96,8 +101,8 @@ input[type='text'] {
     position: absolute;
     width: 735px;
     height: 60px;
-    left: 35%;
-    top: 500px;
+    left: 15%;
+    top: 400px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
@@ -107,8 +112,8 @@ input[type='text'] {
     position: absolute;
     width: 216px;
     height: 38px;
-    left: 35%;
-    top: 600px;
+    left: 15%;
+    top: 500px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -123,8 +128,8 @@ input[type='text'] {
     position: absolute;
     width: 735px;
     height: 68px;
-    left: 35%;
-    top: 650px;
+    left: 15%;
+    top: 550px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
@@ -134,8 +139,8 @@ input[type='text'] {
     position: absolute;
     width: 216px;
     height: 38px;
-    left: 35%;
-    top: 750px;
+    left: 15%;
+    top: 650px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -149,8 +154,8 @@ input[type='text'] {
     position: absolute;
     width: 735px;
     height: 60px;
-    left: 35%;
-    top: 800px;
+    left: 15%;
+    top: 700px;
     background: #FFF5F5;
     border: 2px solid #000000;
     border-radius: 14px;
@@ -160,8 +165,8 @@ input[type='text'] {
     position: absolute;
     width: 196px;
     height: 48px;
-    left:45%;
-    top: 900px;
+    left: 27%;
+    top: 800px;
     background: #815ba5;
     border-radius: 56px;
     font-weight: bold;
@@ -171,7 +176,7 @@ input[type='text'] {
         position: absolute;
         width: 196px;
         height: 48px;
-        left: 45%;
+        left: 15%;
         top: 900px;
         background: #986ebf;
         border-radius: 56px;
@@ -183,8 +188,8 @@ input[type='text'] {
     position: absolute;
     width: 20%;
     height: 38px;
-    left: 43%;
-    top: 950px;
+    left: 25%;
+    top: 850px;
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;

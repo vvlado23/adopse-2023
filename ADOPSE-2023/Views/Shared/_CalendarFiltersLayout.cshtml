@@ -1,0 +1,241 @@
+﻿@using ADOPSE_2023;
+@using MySql.Data.MySqlClient;
+
+@{
+    var data = new List<string>();
+    var data1 = new List<string>();
+    var data2 = new List<string>();
+
+    using (var connection = DatabaseConnection.GetConnection())
+    {
+        using (var command = new MySqlCommand("SELECT CategoryName FROM categories", connection))
+        {
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var ColumnName = reader.GetString(0);
+                    data.Add(ColumnName);
+                }
+            }
+        }
+    }        
+
+    using (var connection = DatabaseConnection.GetConnection())
+    {
+        using (var command = new MySqlCommand("SELECT ModuleName FROM modules", connection))
+        {
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var ColumnName = reader.GetString(0);
+                    data1.Add(ColumnName);
+                }
+            }
+        }
+    }
+
+    using (var connection = DatabaseConnection.GetConnection())
+    {
+        using (var command = new MySqlCommand("SELECT LecturerName FROM lecturer", connection))
+        {
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var ColumnName = reader.GetString(0);
+                    data2.Add(ColumnName);
+                }
+            }
+        }
+    }
+ 
+    //using (var connection = MySqlconnection.GetConnection())
+    //{
+    //    using (var command = new MySqlCommand("SELECT CategoryName FROM categories WHERE CategoryName LIKE" , connection))
+    //    {
+    //        using (var reader = command.ExecuteReader())
+    //        {
+    //            while (reader.Read())
+    //            {
+    //                var ColumnName = reader.GetString(0);
+    //                data.Add(ColumnName);
+    //            }
+    //        }
+    //    }
+    //}
+    
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title> <!--Geia na leitourgisei thelei na to rithmisis kai apo ton antistoixo controller, pane sto InfoController gia paradeigma-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="~/images/ecne.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/footer.css" />
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="~/css/sidebar.css">
+
+    <link rel="stylesheet" href="~/css/Courses.css" />
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Ogma</span>
+            <img class="logo-image" src="~/images/ecne.png" />
+        </div>
+        <div class="login">
+            <a style="color:black" onclick="location.href='/Home/LoginPage'"><i class="bx bx-log-in bx-md"></i></a>
+        </div>
+        <div class="sidebar">
+            <div class="logo" style="border:2px solid black; width:89%; border-radius:0; background-color:aliceblue">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Ogma</span>
+                <img class="logo-image" src="~/images/ecne.png" />
+            </div>
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a onclick="location.href='/Home/HomePage'" class="nav-link">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="link">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a onclick="location.href='/Info/CoursesPage'" class="nav-link">
+                            <i class='bx bx-book icon'></i>
+                            <span class="link">Courses</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a onclick="location.href='/Info/CalendarPage'" class="nav-link">
+                            <i class='bx bx-calendar icon'></i>
+                            <span class="link">Calendar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <section class="overlay"></section>
+    <div>
+        <main>
+            <div class="container">
+
+
+                @*<-------Categories------->*@
+                <div class="categories">
+                    <h1 style="font-size:large">Deaprtments</h1>
+                    <input type="text" id="search_cate" placeholder="Search for Department..."/>
+                    <ul style="list-style:none" class="categories" id="datalist">
+                        @foreach (var item in data)
+                        {
+                            <li><input type="checkbox" /><label>@item</label></li>
+                        }
+                    </ul>
+                    <div class="toggle">
+                        <span class="tog_text">Show More</span>
+                    </div>
+                </div>
+
+
+                @*<-------Courses------->*@
+                <div class="courses">
+                    <h1 style="font-size:large">Courses</h1>
+                    <input type="text" id="search_course" placeholder="Search for Course..." />
+                    <ul style="list-style:none" class="courses" id="courselist">
+                        @foreach (var item in data1)
+                        {
+                            <li><input type="checkbox" /><label>@item</label></li>
+                        }
+                    </ul>
+                    <div class="toggle">
+                        <span class="tog_text">Show More</span>
+                    </div>
+                </div>
+
+
+                @*<-------Meres------->*@
+                <div class="days">
+                    <h1 style="font-size:large">DAYS</h1>
+                    <select name="meres" class="meres">
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
+                </div>
+
+
+                @*<-------Wra------->*@
+                <div class="time">
+                    <h1 style="font-size:large">TIME</h1>
+                    <select name="wres" class="wres">
+                        <option value="ennia">9-11</option>
+                        <option value="enteka">11-13</option>
+                        <option value="dio">14-16</option>
+                        <option value="tesseris">16-18</option>
+                        <option value="eksi">18-20</option>
+                    </select>
+                </div>
+
+
+                @*<-------Kathigitis------->*@
+                <div class="lecturer">
+                    <h5 style="font-size:large">Lecturer</h5>
+                    <input type="text" id="search_lecturer" placeholder="Search for Lecturer..." />
+                    <ul style="list-style:none" class="lecturer" id="lecturerlist">
+                        @foreach (var item in data2)
+                        {
+                            <li><input type="checkbox" /><label>@item</label></li>
+                        }
+                    </ul>
+                    <div class="toggle">
+                        <span class="tog_text">Show More</span>
+                    </div>
+                </div>
+               
+            </div>
+            @RenderBody()
+            
+        </main>
+    </div>
+    
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <!-- <i class="fab fa-slack"></i>-->
+                    <img class="logo-image" src="~/images/ecne.png" />
+                    <span class="logo_name">Ogma</span>
+                </div>
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/sidebarScript.js"></script>
+</body>
+</html>
