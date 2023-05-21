@@ -3,7 +3,7 @@ public class Module
 {
    
     public string Price { get; set; }
-   /public string Difficulty { get; set; }
+   public string Difficulty { get; set; }
     public int Rating { get; set; }
     public int idModules { get; set; }
     public string moduleName { get; set; }

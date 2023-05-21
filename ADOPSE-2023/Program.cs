@@ -49,6 +49,7 @@ int ratingFilter = 3;
 // Call the faceted search logic
 List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter,15374);
 
+Console.WriteLine("apotelesmata:");
 // Display the filtered modules
 foreach (Module module in filteredModules)
 {
