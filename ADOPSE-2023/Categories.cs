@@ -6,10 +6,10 @@
         public string CategoryName { get; set; } 
         public int ParentCategoryID { get; set; }
 
-        public Categories(int idCategory, string categoryName, int ParentCategoryID)
+        public Categories(int idCategory, string CategoryName, int ParentCategoryID)
         {
             this.idCategory = idCategory;
-            this.CategoryName = categoryName;
+            this.CategoryName = CategoryName;
             this.ParentCategoryID = ParentCategoryID;
         }
     }
