@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ADOPSE_2023.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -67,7 +68,7 @@ namespace ADOPSE_2023
                         int idModules = Convert.ToInt32(reader["idModules"]);
                         string categoryName = reader["CategoryName"].ToString();
 
-                        Module module = new Module(idModules, moduleName, price, rating, difficulty, moduleDesc);
+                        Module module = new Module(idModules, moduleName, price, rating, difficulty, moduleDesc,"");
                         module.categoryName = categoryName;
                         filteredModules.Add(module);
                     }
