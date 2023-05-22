@@ -46,13 +46,30 @@ namespace ADOPSE_2023
             // Fetch events from the database
             List<DatabaseEvent> events = FetchEvents.FetchEventsFromDatabase();
 
-            // Call the AddEventsToCalendar method
-            Calendar.AddEventsToCalendar(events);
-           
+            if (events.Count == 0)
+            {
+                Console.WriteLine("No events found.");
+            }
+            else
+            {
+                Console.WriteLine("Events:");
+                foreach (DatabaseEvent ev in events)
+                {
+                    Console.WriteLine($"Summary: {ev.Summary}");
+                    Console.WriteLine($"Description: {ev.Description}");
+                    Console.WriteLine($"Starts on: {ev.StartDateTime}");
+                    Console.WriteLine($"Ends on: {ev.EndDateTime}");
+                    Console.WriteLine();
+                }
 
-            // Wait for user input to keep the console window open
-            Console.WriteLine("Events added to calendar. Press any key to exit.");
-            Console.ReadKey();
+                // Call the AddEventsToCalendar method
+                //Calendar.AddEventsToCalendar(events);
+
+
+                // Wait for user input to keep the console window open
+                Console.WriteLine("Events added to calendar. Press any key to exit.");
+                //Console.ReadKey();
+            }
         }
     }
 }
