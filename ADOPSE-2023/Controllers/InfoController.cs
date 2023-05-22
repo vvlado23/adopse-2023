@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ADOPSE_2023.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ADOPSE_2023.Controllers
 {
@@ -14,7 +15,7 @@ namespace ADOPSE_2023.Controllers
         {
             ViewBag.Title = "Courses Info"; //title passed to infoTest.cshtml
             return View();
-        }  
+        }
 
         public IActionResult CoursesPage()
         {
@@ -25,6 +26,8 @@ namespace ADOPSE_2023.Controllers
         {
             return View();
         }
+
+       
 
     }
 }

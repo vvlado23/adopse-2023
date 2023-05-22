@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ADOPSE_2023.Models;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
@@ -12,7 +13,12 @@ namespace ADOPSE_2023
 {
     public class Search
     {
+
+        public Search() { }
+
         public static RAMDirectory indexDirectory; // Declare indexDirectory as a class-level field
+
+        public static Search instance = new Search();
 
         public static void IndexDocuments()
         {
@@ -78,7 +84,7 @@ namespace ADOPSE_2023
 
         }
 
-        public static List<Module> SearchDocuments(string searchTerm, RAMDirectory indexDirectory)
+        public List<Module> SearchDocuments(string searchTerm, int pageNumber)
         {
             IndexReader indexReader = null;
             try
@@ -96,11 +102,15 @@ namespace ADOPSE_2023
                 // Enable leading wildcard support
                 queryParser.AllowLeadingWildcard = true;
 
+                TopScoreDocCollector collector = TopScoreDocCollector.Create(1000000, true);
+
                 // Create a wildcard query
                 Query wildQuery = queryParser.Parse("*" + searchTerm + "*");
 
+                indexSearcher.Search(wildQuery, collector);
+
                 // Use Lucene to search for data
-                TopDocs results = indexSearcher.Search(wildQuery, 10);
+                TopDocs results = collector.TopDocs((pageNumber - 1) * 15, pageNumber * 15);
 
                 List<Module> searchResults = new List<Module>();
 
