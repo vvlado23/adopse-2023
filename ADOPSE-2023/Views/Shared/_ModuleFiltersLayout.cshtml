@@ -19,7 +19,8 @@
                 }
             }
         }
-    }    
+    }
+    
 
 }
 
@@ -93,7 +94,11 @@
                 @*<-------Categories------->*@
                 <div class="categories">
                     <h1 style="font-size:large">Deaprtments</h1>
-                    <input type="text" id="search" placeholder="Search for Department..."/>
+                    <div class="row">
+                        <input type="text" name="search" placeholder="Search for Department..." />
+                        <input type="submit" name="submit" value="Search" />
+                    </div>
+                    
                     <ul style="list-style:none" class="categories" id="datalist">
                         @foreach (var item in data)
                         {
@@ -157,12 +162,12 @@
                     <input type="radio" id="6+hours" name="dur">
                     <label for="6+hours">More than 6 hours</label>
                 </div>
-               
+                <div style="height:350px"></div>
             </div>
             @RenderBody()
         </main>
     </div>
-
+    
     <footer>
         <div class="content">
             <div class="top">

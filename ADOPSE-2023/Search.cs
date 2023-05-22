@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ADOPSE_2023.Models;
 using Lucene.Net.Analysis.Standard;
 using Lucene.Net.Documents;
 using Lucene.Net.Index;
@@ -12,7 +13,12 @@ namespace ADOPSE_2023
 {
     public class Search
     {
+
+        public Search() { }
+
         public static RAMDirectory indexDirectory; // Declare indexDirectory as a class-level field
+
+        public static Search instance = new Search();
 
         public static void IndexDocuments()
         {
@@ -24,7 +30,7 @@ namespace ADOPSE_2023
             IndexWriter indexWriter = new IndexWriter(indexDirectory, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
 
             // Fetch data from the MySQL table
-            string query = "SELECT idModules, moduleName, moduleDesc FROM modules";
+            string query = "SELECT * FROM modules";
             
             MySqlCommand command = new MySqlCommand(query,connection);
             try
@@ -39,6 +45,7 @@ namespace ADOPSE_2023
                 {
                     Document doc = new Document();
                     doc.Add(new Field("idModules", reader["idModules"].ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+                    doc.Add(new Field("Difficulty", reader["Difficulty"].ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
                     doc.Add(new Field("moduleName", reader["moduleName"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
                     doc.Add(new Field("moduleDesc", reader["moduleDesc"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
                     indexWriter.AddDocument(doc);
@@ -78,7 +85,7 @@ namespace ADOPSE_2023
 
         }
 
-        public static List<Module> SearchDocuments(string searchTerm, RAMDirectory indexDirectory)
+        public List<Module> SearchDocuments(string searchTerm, int pageNumber)
         {
             IndexReader indexReader = null;
             try
@@ -96,11 +103,15 @@ namespace ADOPSE_2023
                 // Enable leading wildcard support
                 queryParser.AllowLeadingWildcard = true;
 
+                TopScoreDocCollector collector = TopScoreDocCollector.Create(1000000, true);
+
                 // Create a wildcard query
                 Query wildQuery = queryParser.Parse("*" + searchTerm + "*");
 
+                indexSearcher.Search(wildQuery, collector);
+
                 // Use Lucene to search for data
-                TopDocs results = indexSearcher.Search(wildQuery, 10);
+                TopDocs results = collector.TopDocs((pageNumber - 1) * 15, pageNumber * 15);
 
                 List<Module> searchResults = new List<Module>();
 
@@ -108,13 +119,15 @@ namespace ADOPSE_2023
                 foreach (ScoreDoc scoreDoc in results.ScoreDocs)
                 {
                     Document doc = indexSearcher.Doc(scoreDoc.Doc);
+                    Console.WriteLine("doc.Get(\"Difficulty\")" + doc.Get("Difficulty"));
                     Module result = new Module(
                         price: "", 
                         rating: 0,
-                        difficulty: int.Parse(doc.Get("Difficulty")),
                         idModules: int.Parse(doc.Get("idModules")),
+                        difficulty: int.Parse(doc.Get("Difficulty")),
                         moduleName: doc.Get("moduleName"),
-                        moduleDesc: doc.Get("moduleDesc")
+                        moduleDesc: doc.Get("moduleDesc"),
+                        categoryName:""
                     );
                     searchResults.Add(result);
                 }
@@ -165,7 +178,6 @@ namespace ADOPSE_2023
                 Console.WriteLine("IdModules: {0}, ModuleName: {1}, ModuleDesc: {2}",
                     doc.Get("idModules"), doc.Get("moduleName"), doc.Get("moduleDesc"));
             }
-
             // Close the Lucene index
             indexReader.Dispose();
             indexDirectory.Dispose();

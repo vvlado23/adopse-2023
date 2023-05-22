@@ -7,24 +7,41 @@ using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
+using System;
+using Lucene.Net.Store;
+using ADOPSE_2023.Models;
 
-namespace ADOPSE_2023
-{
-    public class Program
-    {
-        private static string[] Scopes = { CalendarService.Scope.Calendar };
-        private static string ApplicationName = "ADOPSE";
-        private static string CredentialsFilePath = "C:\\Users\\dimit\\OneDrive\\Documents\\GitHub\\adopse-2023\\ADOPSE-2023\\Credentials\\adopse-387323-623c15620f3f.json";
+var builder = WebApplication.CreateBuilder(args);
 
-        static void Main(string[] args)
-        {
-            // Faceted search parameters
-            string priceFilter = "0";
-            string difficultyFilter = "3";
-            int ratingFilter = 4;
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
-            // Call the faceted search logic
-            List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter);
+var app = builder.Build();
+
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=HomePage}/{id?}");
+
+app.MapRazorPages();
+
+// Faceted search parameters
+string priceFilter = "80";
+string difficultyFilter = "3";
+int ratingFilter = 3;
+
+// Call the faceted search logic
+List<Module> filteredModules = FacetedSearch.PerformSearch(categoryFilter:15374);
+//List<Module> filteredModules = FacetedSearch.PerformSearchAll(priceFilter, difficultyFilter, ratingFilter, 15374);
+
+
+
+
 
             if (filteredModules.Count == 0)
             {
@@ -39,7 +56,8 @@ namespace ADOPSE_2023
                     Console.WriteLine($"moduleName: {module.moduleName}");
                     Console.WriteLine($"Price: {module.Price}");
                     Console.WriteLine($"Rating: {module.Rating}");
-                    Console.WriteLine();
+        Console.WriteLine($"Difficulty: {module.Difficulty}");
+        Console.WriteLine();
                 }
             }
 
@@ -70,6 +88,14 @@ namespace ADOPSE_2023
                 Console.WriteLine("Events added to calendar. Press any key to exit.");
                 //Console.ReadKey();
             }
-        }
-    }
-}
+
+
+        
+
+
+UserAuth register = new UserAuth();
+register.RegisterUser("test@email", "test", "test");
+UserAuth login = new UserAuth();
+login.LoginUser("test", "test1");
+app.Run();
+
