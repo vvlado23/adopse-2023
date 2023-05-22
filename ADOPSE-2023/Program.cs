@@ -51,4 +51,12 @@ else
         Console.WriteLine();
     }
 }
+
+
+UserAuth register = new UserAuth();
+register.RegisterUser("test@email", "test", "test");
+UserAuth login = new UserAuth();
+login.LoginUser("test", "test1");
 app.Run();
+
+
