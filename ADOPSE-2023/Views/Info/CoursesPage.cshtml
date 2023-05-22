@@ -1,20 +1,215 @@
 ﻿@page "/CoursesPage"
-@model ADOPSE_2023.Models.UserController;
+@using ADOPSE_2023;
+@using ADOPSE_2023.Models;
+@using MySql.Data.MySqlClient;
 
 @{
-    Layout = "~/Views/Shared/_ModuleFiltersLayout.cshtml";
 
+    Layout = "~/Views/Shared/_ModuleFiltersLayout.cshtml";
+    var courses = new List<Module>();
+    var pNum = 1;
+    {
+        courses = Search.instance.SearchDocuments("", pNum);
+    }
 }
 
 <html>
-    <head>
+   <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Courses.css" asp-append-version="true" />
+    <style>
+        .page-container{
+            position: absolute;
+            left: 440px;
+            top: 80px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+        }
+
+        .page-button {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            width:20px;
+            height:20px;
+            border-radius: 4px;
+            box-shadow: 2px 1px 4px #888888;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        .grid-container {
+            position: absolute;
+            left: 440px;
+            top: 100px;
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            padding: 10px;
+        }
+
+        .grid-item {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius : 8px;
+            box-shadow: 2px 1px 4px #888888;
+            margin: 8px;
+            width: 230px;
+            height: 230px;
+            padding: 10px;
+        }
+
+        .grid-item:hover {
+            box-shadow: 0.5px 0.5px 4px #888888;
+        }
+
+            .grid-item:active {
+                box-shadow: 2px 1px 10px #888888 inset,-1px -0.5px 10px #888888 inset;
+            }
+
+        .grid-item-title {
+            font-size: 18px;
+            text-align: center;
+            font-weight: 700;
+            display: inline-block;
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 2.4em; /* (Number of lines you want visible) * (line-height) */
+            line-height: 1.2em;
+        }
+
+        .grid-item-description {
+            font-size: 16px;
+            text-align: start;
+            word-wrap: break-word;
+            overflow: hidden;
+            max-height: 5em; /* (Number of lines you want visible) * (line-height) */
+            line-height: 1em;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+        .grid-item-teacher {
+            font-size: 16px;
+            opacity: 0.4;
+            text-align: start;
+        }
+
+        .grid-item-stars {
+            position: absolute;
+            background-size: contain;
+            width: 198px;
+            bottom: 38px;
+            height: 34px;
+        }
+
+        .grid-item-price {
+            position: absolute;
+            bottom: 10px;
+            height: 24px;
+            font-size: 18px;
+            color: black;
+            background-color: #C8F415;
+            text-align: start;
+        }
+
+    </style>
     </head>
     <body>
-    
+    <div class="page-container">
+        <asp:button class="page-button" onclick="prevPage();">-</asp:button>
+        <div id="pageNum">@pNum</div>
+        <asp:button class="page-button" onclick="nextPage();">+</asp:button>
+        </div>
+    <div class="grid-container">
+        @foreach (var course in courses)
+    {
+        @Html.Partial("_CourseItems", course)
+    }
+</div>
+    <script>
+        function nextPage() {
+            var counter = document.getElementById('pageNum');
+            var pNum = parseInt(counter.innerHTML) + 1;
+            counter.innerHTML = pNum;
+
+            $.ajax({
+                url: '/Page/UpdatePageNum',
+                type: 'POST',
+                data: { pNum: pNum },
+                success: function (response) {
+                    // Call a function to update the courses on success
+                    updateCourses();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function prevPage() {
+            var counter = document.getElementById('pageNum');
+            var pNum = parseInt(counter.innerHTML) - 1;
+            counter.innerHTML = pNum;
+
+            $.ajax({
+                url: '/Page/UpdatePageNum',
+                type: 'POST',
+                data: { pNum: pNum },
+                success: function (response) {
+                    // Call a function to update the courses on success
+                    updateCourses();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function updateCourses() {
+            var pNum = parseInt(document.getElementById('pageNum').innerHTML);
+
+            $.ajax({
+                url: '/Page/GetCourses',
+                type: 'POST',
+                data: { pNum: pNum },
+                success: function (response) {
+                    console.log(response);
+                    // Find the grid container
+                    var gridContainer = document.querySelector('.grid-container');
+
+                    // Get the list of updated course items
+                    var updatedCourseItems = $(response).find('.grid-item');
+
+                    // Replace the HTML content of existing grid items with the updated course items
+                    var existingCourseItems = gridContainer.getElementsByClassName('grid-item');
+                    for (var i = 0; i < existingCourseItems.length; i++) {
+                        existingCourseItems[i].innerHTML = updatedCourseItems[i].innerHTML;
+                    }
+
+                    // Rebind the click event to the new course items
+                    bindCourseItemClickEvent();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        // Bind click event to course items
+        function bindCourseItemClickEvent() {
+            var courseItems = document.querySelectorAll('.grid-item');
+
+            courseItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    // Handle click event
+                    // Add your logic here
+                });
+            });
+        }
+    </script>
 
     </body>
 
-    
 </html>
