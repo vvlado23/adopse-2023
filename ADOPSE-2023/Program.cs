@@ -1,7 +1,10 @@
+using ADOPSE_2023;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using System;
 using Lucene.Net.Store;
 using ADOPSE_2023;
+using ADOPSE_2023.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,38 +23,32 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 
-/*
-UserAuth register = new UserAuth();
-
-register.RegisterUser("test@email", "test", "test");
-*/
-
-app.Run();
-
-/*
-UserAuth login = new UserAuth();
-
-login.LoginUser("test", "test1");
-*/
-
-
-
-/*
 // Faceted search parameters
-string priceFilter = "free";
-string difficultyFilter = "beginner";
-int ratingFilter = 4;
+string priceFilter = "80";
+string difficultyFilter = "3";
+int ratingFilter = 3;
 
 // Call the faceted search logic
-List<Module> filteredModules = FacetedSearch.PerformSearch(priceFilter, difficultyFilter, ratingFilter);
+List<Module> filteredModules = FacetedSearch.PerformSearch(categoryFilter:15374);
+//List<Module> filteredModules = FacetedSearch.PerformSearchAll(priceFilter, difficultyFilter, ratingFilter, 15374);
 
-// Display the filtered modules
-foreach (Module module in filteredModules)
+
+
+if (filteredModules.Count == 0)
 {
-    Console.WriteLine($"Module ID: {module.moduleName}");
-    Console.WriteLine($"Module Name: {module.idModules}");
-    Console.WriteLine($"Price: {module.Price}");
-    Console.WriteLine($"Rating: {module.Rating}");
-    Console.WriteLine();
+    Console.WriteLine("No modules found matching the search criteria.");
 }
-*/
+else
+{
+    Console.WriteLine("Apotelesmata");
+    // Display the filtered modules
+    foreach (Module module in filteredModules)
+    {
+        Console.WriteLine($"moduleName: {module.moduleName}");
+        Console.WriteLine($"Price: {module.Price}");
+        Console.WriteLine($"Rating: {module.Rating}");
+        Console.WriteLine($"Difficulty: {module.Difficulty}");
+        Console.WriteLine();
+    }
+}
+app.Run();

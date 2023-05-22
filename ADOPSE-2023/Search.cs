@@ -30,7 +30,7 @@ namespace ADOPSE_2023
             IndexWriter indexWriter = new IndexWriter(indexDirectory, new StandardAnalyzer(Lucene.Net.Util.Version.LUCENE_30), true, IndexWriter.MaxFieldLength.UNLIMITED);
 
             // Fetch data from the MySQL table
-            string query = "SELECT idModules, moduleName, moduleDesc FROM modules";
+            string query = "SELECT * FROM modules";
             
             MySqlCommand command = new MySqlCommand(query,connection);
             try
@@ -45,6 +45,7 @@ namespace ADOPSE_2023
                 {
                     Document doc = new Document();
                     doc.Add(new Field("idModules", reader["idModules"].ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
+                    doc.Add(new Field("Difficulty", reader["Difficulty"].ToString(), Field.Store.YES, Field.Index.NOT_ANALYZED));
                     doc.Add(new Field("moduleName", reader["moduleName"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
                     doc.Add(new Field("moduleDesc", reader["moduleDesc"].ToString(), Field.Store.YES, Field.Index.ANALYZED));
                     indexWriter.AddDocument(doc);
@@ -118,12 +119,15 @@ namespace ADOPSE_2023
                 foreach (ScoreDoc scoreDoc in results.ScoreDocs)
                 {
                     Document doc = indexSearcher.Doc(scoreDoc.Doc);
+                    Console.WriteLine("doc.Get(\"Difficulty\")" + doc.Get("Difficulty"));
                     Module result = new Module(
                         price: "", 
                         rating: 0,
                         idModules: int.Parse(doc.Get("idModules")),
+                        difficulty: int.Parse(doc.Get("Difficulty")),
                         moduleName: doc.Get("moduleName"),
-                        moduleDesc: doc.Get("moduleDesc")
+                        moduleDesc: doc.Get("moduleDesc"),
+                        categoryName:""
                     );
                     searchResults.Add(result);
                 }
