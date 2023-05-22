@@ -1,5 +1,6 @@
-﻿@using MySql.Data.MySqlClient;
-@using ADOPSE_2023;
+﻿@using ADOPSE_2023;
+@using MySql.Data.MySqlClient;
+
 @{
     var data = new List<string>();
     var data1 = new List<string>();
@@ -213,9 +214,10 @@
                
             </div>
             @RenderBody()
+            
         </main>
     </div>
-
+    
     <footer>
         <div class="content">
             <div class="top">

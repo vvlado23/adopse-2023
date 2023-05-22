@@ -1,8 +1,10 @@
 using ADOPSE_2023;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-//Console
 using System;
+using Lucene.Net.Store;
+using ADOPSE_2023;
+using ADOPSE_2023.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
